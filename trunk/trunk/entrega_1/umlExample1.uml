@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_iNT5gFhJEd-5uJMPgJl7oA" name="umlExample1">
+  <packageImport xmi:id="_iNUgkFhJEd-5uJMPgJl7oA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_l1BAAFhJEd-5uJMPgJl7oA" name="Class_0"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_uCVmwFhJEd-5uJMPgJl7oA" name="Autor"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_w7BEEFhJEd-5uJMPgJl7oA" name="Livro" isActive="true"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_29N3EFhJEd-5uJMPgJl7oA" name="A_Livro_Autor" memberEnd="_29fj4FhJEd-5uJMPgJl7oA _29x3wFhJEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_29x3wFhJEd-5uJMPgJl7oA" name="é escrito" type="_2ypJUFhKEd-5uJMPgJl7oA" isUnique="false" association="_29N3EFhJEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2-BvYFhJEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2-ELoFhJEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_29fj4FhJEd-5uJMPgJl7oA" name="escreve" type="_uCVmwFhJEd-5uJMPgJl7oA" isUnique="false" association="_29N3EFhJEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_29wCkFhJEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_29s_QFhJEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2ypJUFhKEd-5uJMPgJl7oA" name="Livro">
+    <ownedAttribute xmi:id="_nqMmsFhOEd-5uJMPgJl7oA" name="estoca" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_npnX4FhOEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nqceUFhOEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nqaCEFhOEd-5uJMPgJl7oA"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_EdGuMFhLEd-5uJMPgJl7oA" name="Editor"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_GVpkMFhLEd-5uJMPgJl7oA" name="A_Editor_Autor" memberEnd="_GV4NsFhLEd-5uJMPgJl7oA _GWIFUFhLEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_GWIFUFhLEd-5uJMPgJl7oA" name="trabalha" type="_EdGuMFhLEd-5uJMPgJl7oA" isUnique="false" association="_GVpkMFhLEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GWX88FhLEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GWZyIFhLEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_GV4NsFhLEd-5uJMPgJl7oA" name="trabalha" type="_uCVmwFhJEd-5uJMPgJl7oA" isUnique="false" association="_GVpkMFhLEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_GWFpEFhLEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_GWDz4FhLEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_g-xX4FhLEd-5uJMPgJl7oA" name="Gráfica">
+    <ownedAttribute xmi:id="_Xst2UFhOEd-5uJMPgJl7oA" name="estoca" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_XsCg4FhOEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XtQB0FhOEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XtOMoFhOEd-5uJMPgJl7oA"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_zAGPUFhLEd-5uJMPgJl7oA" name="A_Gráfica_Livro" memberEnd="_zAZKQFhLEd-5uJMPgJl7oA _zAq3EFhLEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_zAq3EFhLEd-5uJMPgJl7oA" name="imprime" type="_g-xX4FhLEd-5uJMPgJl7oA" isUnique="false" association="_zAGPUFhLEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zA6usFhLEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zA9K8FhLEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_zAZKQFhLEd-5uJMPgJl7oA" name="é impresso" type="_2ypJUFhKEd-5uJMPgJl7oA" isUnique="false" association="_zAGPUFhLEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zAoa0FhLEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zAkwcFhLEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_gOc4wFhMEd-5uJMPgJl7oA" name="A_Gráfica_Editor" memberEnd="_gO16UFhMEd-5uJMPgJl7oA _gPKqcFhMEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_gPKqcFhMEd-5uJMPgJl7oA" name="entrega cotação" type="_g-xX4FhLEd-5uJMPgJl7oA" isUnique="false" association="_gOc4wFhMEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gPgBoFhMEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gPid4FhMEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_gO16UFhMEd-5uJMPgJl7oA" name="solicita cotação" type="_EdGuMFhLEd-5uJMPgJl7oA" isUnique="false" association="_gOc4wFhMEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_gPIOMFhMEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gPGZAFhMEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VpHm4FhOEd-5uJMPgJl7oA" name="Depósito"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_XsCg4FhOEd-5uJMPgJl7oA" name="A_Gráfica_Depósito" memberEnd="_Xst2UFhOEd-5uJMPgJl7oA _Xtc2IFhOEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_Xtc2IFhOEd-5uJMPgJl7oA" name="envia livros" type="_g-xX4FhLEd-5uJMPgJl7oA" isUnique="false" association="_XsCg4FhOEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_XtxmQFhOEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_XtzbcFhOEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_npnX4FhOEd-5uJMPgJl7oA" name="A_Livro_Depósito" memberEnd="_nqMmsFhOEd-5uJMPgJl7oA _nqe6kFhOEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_nqe6kFhOEd-5uJMPgJl7oA" name="estocado" type="_2ypJUFhKEd-5uJMPgJl7oA" isUnique="false" association="_npnX4FhOEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nqxOcFhOEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nqzqsFhOEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_o31egFhOEd-5uJMPgJl7oA" name="A_Gráfica_Depósito" memberEnd="_o4eXsFhOEd-5uJMPgJl7oA _o46ckFhOEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_o46ckFhOEd-5uJMPgJl7oA" name="envia livro" type="_g-xX4FhLEd-5uJMPgJl7oA" isUnique="false" association="_o31egFhOEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o5RB4FhOEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_o5TeIFhOEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_o4eXsFhOEd-5uJMPgJl7oA" name="recebe livro" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_o31egFhOEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_o42yMFhOEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_o4x5sFhOEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_DBGGYFhPEd-5uJMPgJl7oA" name="Livreiro"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_FVvCgFhPEd-5uJMPgJl7oA" name="A_Clientes_Livro" memberEnd="_FWZw4FhPEd-5uJMPgJl7oA _FWuhAFhPEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_FWuhAFhPEd-5uJMPgJl7oA" name="compra" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_FVvCgFhPEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FXBb8FhPEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FXD4MFhPEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_FWZw4FhPEd-5uJMPgJl7oA" name="é comprado" type="_2ypJUFhKEd-5uJMPgJl7oA" isUnique="false" association="_FVvCgFhPEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_FWsEwFhPEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FWpBcFhPEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_7ZVOUFhPEd-5uJMPgJl7oA" name="Pedido de Compra"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_EuC68FhQEd-5uJMPgJl7oA" name="A_Pedido de Compra_Cliente" memberEnd="_Euzv8FhQEd-5uJMPgJl7oA _EvHR8FhQEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_EvHR8FhQEd-5uJMPgJl7oA" name="é feito" type="_7ZVOUFhPEd-5uJMPgJl7oA" isUnique="false" association="_EuC68FhQEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EvcpIFhQEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EvfFYFhQEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_Euzv8FhQEd-5uJMPgJl7oA" name="preenche" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_EuC68FhQEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_EvE1sFhQEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_EvCZcFhQEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_oX36IFhQEd-5uJMPgJl7oA" name="A_Pedido de Compra_Depósito" memberEnd="_oYgzUFhQEd-5uJMPgJl7oA _oY0VUFhQEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_oY0VUFhQEd-5uJMPgJl7oA" name="é enviado" type="_7ZVOUFhPEd-5uJMPgJl7oA" isUnique="false" association="_oX36IFhQEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oZHQQFhQEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oZJsgFhQEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_oYgzUFhQEd-5uJMPgJl7oA" name="recebe" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_oX36IFhQEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oYx5EFhQEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oYu1wFhQEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wtXwAFhREd-5uJMPgJl7oA" name="Class_1"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_x3v4cFhREd-5uJMPgJl7oA" name="Transportadora">
+    <ownedAttribute xmi:id="_RUSLQFhnEd-5uJMPgJl7oA" name="é feita" type="_MVZPYFhnEd-5uJMPgJl7oA" isUnique="false" association="_RS0ysFhnEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RUnicFhnEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RUkfIFhnEd-5uJMPgJl7oA"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_bzjzEFhSEd-5uJMPgJl7oA" name="Setor Comercial"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_nA3ZAFhSEd-5uJMPgJl7oA" name="A_Setor Comercial_Livreiro" memberEnd="_nBqqQFhSEd-5uJMPgJl7oA _nB_aYFhSEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_nB_aYFhSEd-5uJMPgJl7oA" name="setor Comercial" type="_bzjzEFhSEd-5uJMPgJl7oA" isUnique="false" association="_nA3ZAFhSEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nCVYoFhSEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nCYb8FhSEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_nBqqQFhSEd-5uJMPgJl7oA" name="livreiro" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_nA3ZAFhSEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nB8-IFhSEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nB6h4FhSEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_uRMzEFhSEd-5uJMPgJl7oA" name="A_Depósito_Setor Comercial" memberEnd="_uSMRkFhSEd-5uJMPgJl7oA _uSfzkFhSEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_uSfzkFhSEd-5uJMPgJl7oA" name="informa encomenda" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_uRMzEFhSEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uS8fgFhSEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uS_i0FhSEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_uSMRkFhSEd-5uJMPgJl7oA" name="recebe informação" type="_bzjzEFhSEd-5uJMPgJl7oA" isUnique="false" association="_uRMzEFhSEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_uSdXUFhSEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_uSa7EFhSEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1x35wFhTEd-5uJMPgJl7oA" name="A_Livreiro_Livro" memberEnd="_1y2KIFhTEd-5uJMPgJl7oA _1zKTMFhTEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_1zKTMFhTEd-5uJMPgJl7oA" name="consulta dados" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_1x35wFhTEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1zgRcFhTEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1zjUwFhTEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_1y2KIFhTEd-5uJMPgJl7oA" name="informa dados" type="_2ypJUFhKEd-5uJMPgJl7oA" isUnique="false" association="_1x35wFhTEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1zH28FhTEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1zFasFhTEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_smXXAFhUEd-5uJMPgJl7oA" name="A_Livreiro_Livro" memberEnd="_snhNkFhUEd-5uJMPgJl7oA _sn3L0FhUEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_sn3L0FhUEd-5uJMPgJl7oA" name="devolve" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_smXXAFhUEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_soNxIFhUEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_soQ0cFhUEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_snhNkFhUEd-5uJMPgJl7oA" name="é devolvido" type="_2ypJUFhKEd-5uJMPgJl7oA" isUnique="false" association="_smXXAFhUEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sn0IgFhUEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_snxsQFhUEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SnPGEFhVEd-5uJMPgJl7oA" name="A_Livreiro_Setor Comercial" memberEnd="_SoV5UFhVEd-5uJMPgJl7oA _SoseoFhVEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_SoseoFhVEd-5uJMPgJl7oA" name="solicita autorização" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_SnPGEFhVEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SpDD8FhVEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SpGHQFhVEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_SoV5UFhVEd-5uJMPgJl7oA" name="responde solicitação" type="_bzjzEFhSEd-5uJMPgJl7oA" isUnique="false" association="_SnPGEFhVEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SopbUFhVEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SomYAFhVEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_tAVgwFhVEd-5uJMPgJl7oA" name="A_Livreiro_Depósito" memberEnd="_tBxEIFhVEd-5uJMPgJl7oA _tCKswFhVEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_tCKswFhVEd-5uJMPgJl7oA" name="remete livros" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_tAVgwFhVEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCigMFhVEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tCljgFhVEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_tBxEIFhVEd-5uJMPgJl7oA" name="confere remessa" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_tAVgwFhVEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tCIQgFhVEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tCFNMFhVEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_NIfvAFhhEd-5uJMPgJl7oA" name="A_Setor Comercial_Depósito" memberEnd="_NJiQ0FhhEd-5uJMPgJl7oA _NKCAEFhhEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_NKCAEFhhEd-5uJMPgJl7oA" name="recebe informação" type="_bzjzEFhSEd-5uJMPgJl7oA" isUnique="false" association="_NIfvAFhhEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NKZzgFhhEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NKcPwFhhEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_NJiQ0FhhEd-5uJMPgJl7oA" name="informa devolução" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_NIfvAFhhEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_NJ3oAFhhEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_NJ0ksFhhEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_nDl_EFhhEd-5uJMPgJl7oA" name="A_Setor Comercial_Livreiro" memberEnd="_nE60wFhhEd-5uJMPgJl7oA _nFZV4FhhEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_nFZV4FhhEd-5uJMPgJl7oA" name="prepara cheque" type="_bzjzEFhSEd-5uJMPgJl7oA" isUnique="false" association="_nDl_EFhhEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nF0MoFhhEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nF33AFhhEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_nE60wFhhEd-5uJMPgJl7oA" name="recebe devolução" type="_DBGGYFhPEd-5uJMPgJl7oA" isUnique="false" association="_nDl_EFhhEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nFW5oFhhEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nFT2UFhhEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MVZPYFhnEd-5uJMPgJl7oA" name="Entrega"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_RS0ysFhnEd-5uJMPgJl7oA" name="A_Transportadora_Entrega" memberEnd="_RUSLQFhnEd-5uJMPgJl7oA _RUqlwFhnEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_RUqlwFhnEd-5uJMPgJl7oA" name="realiza" type="_x3v4cFhREd-5uJMPgJl7oA" isUnique="false" association="_RS0ysFhnEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RVGDkFhnEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RVJt8FhnEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_SRjr0FhnEd-5uJMPgJl7oA" name="A_Entrega_Depósito" memberEnd="_STWbkFhnEd-5uJMPgJl7oA _STvdIFhnEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_STvdIFhnEd-5uJMPgJl7oA" name="é preparada" type="_MVZPYFhnEd-5uJMPgJl7oA" isUnique="false" association="_SRjr0FhnEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_SULiAFhnEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_SUOlUFhnEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_STWbkFhnEd-5uJMPgJl7oA" name="prepara" type="_VpHm4FhOEd-5uJMPgJl7oA" isUnique="false" association="_SRjr0FhnEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_STsZ0FhnEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_STpWgFhnEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_AsxJ8FhoEd-5uJMPgJl7oA" name="Contrato"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_DPRi8FhoEd-5uJMPgJl7oA" name="A_Autor_Contrato" memberEnd="_DRP44FhoEd-5uJMPgJl7oA _DRqvoFhoEd-5uJMPgJl7oA">
+    <ownedEnd xmi:id="_DRqvoFhoEd-5uJMPgJl7oA" name="assina" type="_uCVmwFhJEd-5uJMPgJl7oA" isUnique="false" association="_DPRi8FhoEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DSIpsFhoEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DSOJQFhoEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_DRP44FhoEd-5uJMPgJl7oA" name="é assinado" type="_AsxJ8FhoEd-5uJMPgJl7oA" isUnique="false" association="_DPRi8FhoEd-5uJMPgJl7oA">
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DRnsUFhoEd-5uJMPgJl7oA" value="*"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_DRkB8FhoEd-5uJMPgJl7oA"/>
+    </ownedEnd>
+  </packagedElement>
+  <profileApplication xmi:id="_iNUgkVhJEd-5uJMPgJl7oA">
+    <eAnnotations xmi:id="_iNUgklhJEd-5uJMPgJl7oA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/schemas/Standard/1#/"/>
+    </eAnnotations>
+    <appliedProfile href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+  </profileApplication>
+</uml:Model>
