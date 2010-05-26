@@ -1,0 +1,191 @@
+model EditoraABC
+
+class Contrato
+attributes
+	taxa : Real
+	prazo_validade : String
+end
+
+class Autor
+end
+
+class Editor
+operations
+	entregaVersao()
+end
+
+class Livro
+attributes
+	preco : Real
+	prazo : String
+	disponibilidade : Boolean
+	custo : Real
+end
+
+class Livreiro
+operations
+	pagaFaturas()
+end
+
+class Fatura
+attributes
+	forma : String
+	prazo : String
+	valor : Real
+end
+
+class SetorComercial
+end
+
+class PedidoDeCompra
+attributes
+	formaEnvio : String
+	titulosLivros : String
+	quantidadeLivros : Integer
+	status : String
+end
+
+class Transportadora
+attributes
+	custoFrete : Real
+end
+
+class Grafica
+end
+
+class Devolucao
+attributes
+	data : String
+end
+
+class Pagamento
+attributes
+	data : String
+	valor : Real
+end
+
+class Entrega
+attributes
+	custo : Real
+	dataEnvio : String
+	dataVencimento : String
+operations
+	geraFatura()
+end
+
+class Deposito
+attributes
+	quantidadeEstoque : Integer
+operations
+	atualizaEstoque(quantidade : Integer)
+end
+
+association autorContrato between
+  Autor[1] role assina
+  Contrato[1] role eAssinado
+end
+
+association autorEditor between
+  Autor[*] role trabalha
+  Editor[1..*] role trabalha
+end
+
+association editorGrafica between
+  Editor[1..*] role solicitaCotacao
+  Grafica[1] role entregaCotacao
+end
+
+association graficaLivro between
+  Grafica[1..*] role imprime
+  Livro[1] role eImpresso
+end
+
+association graficaDeposito between
+  Grafica[1..*] role enviaLivro
+  Deposito[1..*] role recebeLivro
+end
+
+association depositoEntrega between
+  Deposito[1..*] role prepara
+  Entrega[1] role ePreparada
+end
+
+association entregaTransportadora between
+  Entrega[1] role eFeita
+  Transportadora[1..*] role realiza
+end
+
+association depositoPedidoDeCompra between
+  Deposito[1..*] role recebe
+  PedidoDeCompra[1] role eEnviado
+end
+
+association depositoSetorComercialEncomenda between
+  Deposito[1..*] role informaEncomenda
+  SetorComercial[1] role recebeInformacaoEncomenda
+end
+
+--association depositoSetorComercialDevolucao between
+--  Deposito[1..*] role informaDevolucao
+--  SetorComercial[1..*] role recebeInformacaoDevolucao
+--end
+
+association depositoLivreiro between
+  Deposito[1..*] role confereRemessa
+  Livreiro[1..*] role remeteLivros
+end
+
+association pedidoDeCompraLivreiro between
+  PedidoDeCompra[1] role eFeito
+  Livreiro[1] role preenche
+end
+
+association setorComercialLivreiroAutorizacao between
+  SetorComercial[1] role respondeSolicitacao
+  Livreiro[1..*] role solicitaAutorizacao
+end
+
+--association setorComercialLivreiroDevolucao between
+--  SetorComercial[1] role preparaCheque
+--  Livreiro[1] role recebeDevolucao
+--end
+
+association livreiroLivroDevolve between
+  Livreiro[1..*] role devolve
+  Livro[1] role eDevolvido
+end
+
+association livreiroLivroCompra between
+  Livreiro[1..*] role compra
+  Livro[*] role eComprado
+end
+
+association livreiroLivroDados between
+  Livreiro[1..*] role consultaDados
+  Livro[1] role informaDados
+end
+
+association livroAutor between
+  Livro[1..*] role escreve
+  Autor[1..*] role eEscrito
+end
+
+association faturaSetorComercial between
+  Fatura[1] role efeita
+  SetorComercial[1..*] role faz
+end
+
+constraints
+
+context Deposito::atualizaEstoque(quantidade : Integer)
+   post : quantidadeEstoque = quantidadeEstoque@pre + quantidade
+  
+ 
+
+--Tuple {pedido: PedidoDeCompra, status : pedido.status}
+--Tuple {fatura: Fatura, dataPagamento: fatura.prazo, valor : fatura.valor}
+--Tuple {dataPagamento: pagamento.data, valor: pagamento.valor}
+--Tuple {devolucao: Devolucao, data: devolucao.data}
+--context Deposito::valorTotalVendas()
+--post: recebeInformacao.recebe.valor.sum()
+--Tuple {livro : Livro, quantidade : livro.eimpresso.envialivro.quantidadeEstoque}
