@@ -3,6 +3,9 @@ model EditoraABC
 class Autor
 operations
 	calculaDireitoAutoral(nomeLivro : String)
+	geraRelatorioTotalLivrosVendidos() : Integer
+	geraRelatorioTotalLivrosDevolvidos() : Integer
+	geraRelatorioTotalLivrosEstoque() : Integer
 end
 
 class Livro
@@ -26,16 +29,25 @@ operations
 end
 
 class Livreiro
+operations
+	geraRelatorioPedidos() : Set(Pedido)
+	geraRelatorioFaturas() : Set(FaturaEncomenda)
+	geraRelatorioPagamentos() : Set(Pagamento)
+	geraRelatorioDevolucoes() : Set(Devolucao)
 end
 
 class Pedido
 attributes
+	estado : String
 	formaEnvio : String
 end
 
 class SetorComercial
 operations
 	preparaCheque()
+	geraRelatorioTotalVendas() : Integer
+	geraRelatorioTotalDinheiroRecebido() : Real
+	geraRelatorioTotalLivrosEstoque() : Integer
 end
 
 class FaturaEncomenda
@@ -51,7 +63,7 @@ end
 
 class Transportadora
 operations
-	calculaFrete(cidadeOrigem : String)
+	calculaFrete(cidadeLivreiro : String) : Real
 end
 
 --Classe de associacao
@@ -64,6 +76,9 @@ class Entrega
 attributes
 	custo : Real
 	dataEnvio : String
+	quantidade : Integer
+operations
+	calculaCusto(cidadeLivreiro : String) : Real
 end
 
 class Pagamento
@@ -73,6 +88,7 @@ class Devolucao
 attributes
 	valor : Real
 	motivo : String
+	quantidade : Integer
 end
 
 class Contrato
@@ -84,151 +100,177 @@ operations
 end
 
 class Encomenda
+attributes
+	custo : Real
+end
+	
+association assina between
+	Autor[1] role autor
+	Contrato[1] role contrato
 end
 
-association autorContrato between
-	Autor[1] role assina
-	Contrato[1] role eAssinado
+association trabalha between
+	Autor[1..*] role autor
+	Editor[1..*] role editor
 end
 
-association autorEditor between
-	Autor[1..*] role trabalha
-	Editor[1..*] role trabalha
+association solicitaCotacao between
+	Editor[1..*] role editor
+	Grafica[1] role grafica
 end
 
-association editorGrafica between
-	Editor[1..*] role solicitaCotacao
-	Grafica[1] role entregaCotacao
+association imprime between
+	Grafica[1..*] role grafica
+	Livro[1] role livro
 end
 
-association graficaLivro between
-	Grafica[1..*] role imprime
-	Livro[1] role eImpresso
+association enviaLivro between
+	Grafica[1] role grafica
+	Deposito[1..*] role deposito
 end
 
-association graficaDeposito between
-	Grafica[1..*] role enviaLivro
-	Deposito[1..*] role recebeLivro
+association prepara between
+	Deposito[1..*] role deposito
+	Entrega[*] role entrega
 end
 
-association depositoEntrega between
-	Deposito[1..*] role prepara
-	Entrega[1] role ePreparada
+association realiza between
+	Transportadora[1..*] role transportadora
+	Entrega[*] role entrega
 end
 
-association entregaTransportadora between
-	Entrega[1] role eFeita
-	Transportadora[1..*] role realiza
+association recebe between
+	Deposito[1..*] role deposito
+	Pedido[*] role pedido
 end
 
-association depositoPedido between
-	Deposito[1..*] role recebe
-	Pedido[1] role eEnviado
+association informaEncomenda between
+	Encomenda[*] role encomenda
+	SetorComercial[1..*] role setorComercial
 end
 
-association setorComercialEncomenda between
-	SetorComercial[1..*] role recebeInformacao
-	Encomenda[1] role eInformada
+association informaDevolucao between
+	Devolucao[*] role devolucaoInforma
+	SetorComercial[1..*] role setorComercialDevolve
 end
 
-association setorComercialDevolucaoInformacao between
-	SetorComercial[1..*] role recebeInformacao
-	Devolucao[1] role eInformado
+association remeteLivros between
+	Devolucao[1] role devolucao
+	Deposito[1] role deposito
 end
 
-association depositoLivreiro between
-	Deposito[1] role confereRemessa
-	Livreiro[1..*] role remeteLivros
+association preenche between
+	Livreiro[1..*] role livreiro
+	Pedido[*] role pedido
 end
 
-association pedidoLivreiro between
-	Pedido[1] role eFeito
-	Livreiro[1] role preenche
+association solicitaDevolucao between
+	Livreiro[1] role livreiro
+	SetorComercial[1] role setorComercial
 end
 
-association setorComercialLivreiro between
-	SetorComercial[1] role respondeSolicitacao
-	Livreiro[1] role solicitaDevolucao
+association preparaCheque between
+	SetorComercial[1..*] role setorComercialPaga
+	Devolucao[*] role devolucaoPaga
 end
 
-association setorComercialDevolucaoRealizacao between
-	SetorComercial[1] role preparaCheque
-	Devolucao[1] role eEfetuada
+association eEfetuada between
+	Devolucao[*] role devolucao
+	Livreiro[1..*] role livreiro
 end
 
-association livreiroDevolucao between
-	Livreiro[1] role efetua
-	Devolucao[1] role eEfetuada
+association compra between
+	Livreiro[1..*] role livreiroCompra
+	Livro[*] role livroCompra
 end
 
-association livreiroLivroCompra between
-	Livreiro[1..*] role compra
-	Livro[*] role eComprado
+association consultaDados between
+	Livreiro[1..*] role livreiroConsulta
+	Livro[*] role livroConsulta
 end
 
-association livreiroLivroDados between
-	Livreiro[1] role consultaDados
-	Livro[1] role informaDados
+association escrever between
+	Autor[1..*] role autor
+	Livro[*] role livro
 end
 
-association livroAutor between
-	Livro[*] role eEscrito
-	Autor[1..*] role escreve
+association faz between
+	SetorComercial[1..*] role setorComercial
+	FaturaEncomenda[*] role faturaEncomenda
 end
 
-association faturaSetorComercial between
-	FaturaEncomenda[1] role eFeita
-	SetorComercial[1..*] role faz
+association contem between
+	Pedido[1..*] role pedido 
+	LivroPronto[*] role livroPronto
 end
 
-association pedidoLivroPronto between
-	Pedido[1] role contem
-	LivroPronto[1] role estaContido 
+association gerado between
+	LivroPronto[1] role livroPronto
+	Livro[1] role livro
 end
 
-association livroProntoLivro between
-	LivroPronto[1] role eGerado
-	Livro[1] role gera
+association gera between
+	Entrega[1] role entrega
+	FaturaEntrega[1] role faturaEntrega
 end
 
-association entregaFatura between
-	Entrega[1] role gera
-	FaturaEntrega[1] role eGerada
+association realizado between
+	Pagamento[*] role pagamento
+	Livreiro[1..*] role livreiro
 end
 
-association livreiroPagamento between
-	Livreiro[1] role realiza
-	Pagamento[1] role eRealizado
+association efetuado between
+	Pagamento[1] role pagamento
+	FaturaEncomenda[1] role faturaEncomenda
 end
 
-association pagamentoFatura between
-	Pagamento[1] role eEfetuado
-	FaturaEncomenda[1] role recebe
+association possui between
+	Encomenda[1] role encomenda
+	FaturaEncomenda[1] role faturaEncomenda
 end
 
-association encomendaFaturaEncomenda between
-	Encomenda[1] role possui
-	FaturaEncomenda[1] role eAssociada
+association envia between
+	Deposito[1..*] role deposito
+	Encomenda[*] role encomenda
 end
 
-association depositoEncomenda between
-	Deposito[1..*] role envia
-	Encomenda[1] role eEnviada
-end
+constraints
 
+context Deposito::atualizaQuantidadeEstoque(quantidadeRecebida : Integer)
+	post : quantidadeEstoque = quantidadeEstoque@pre + quantidadeRecebida
 
-
---constraints
-
---context Deposito::atualizaEstoque(quantidade : Integer)
---  post : quantidadeEstoque = quantidadeEstoque@pre + quantidade
+context Livreiro::geraRelatorioPedidos() : Set(Pedido)
+	post : result = pedido
   
- 
+context Livreiro::geraRelatorioFaturas() : Set(FaturaEncomenda)
+	post : result = pagamento.faturaEncomenda
 
+context Livreiro::geraRelatorioPagamentos() : Set(Pagamento)
+	post : result = pagamento
+
+context Livreiro::geraRelatorioDevolucoes() : Set(Devolucao)
+	post : result = devolucao
+
+context SetorComercial::geraRelatorioTotalVendas() : Integer
+	post : result = encomenda.deposito.pedido.livroPronto.quantidade->sum()
+	
+context SetorComercial::geraRelatorioTotalDinheiroRecebido() : Real
+	post : result = encomenda.deposito.pedido.livroPronto.livro.custo->sum()
+	
+context SetorComercial::geraRelatorioTotalLivrosEstoque() : Integer
+	post : result = encomenda.deposito.quantidadeEstoque->sum()
+		
+context Autor::geraRelatorioTotalLivrosVendidos() : Integer
+	post : result = livro.livroPronto.pedido.deposito.entrega.quantidade->sum()
+	
+context Autor::geraRelatorioTotalLivrosDevolvidos() : Integer
+	post : result = livro.livroPronto.pedido.deposito.devolucao.quantidade->sum()
+
+context Autor::geraRelatorioTotalLivrosEstoque() : Integer
+	post : result = livro.livroPronto.pedido.deposito.quantidadeEstoque->sum()
+	
 --Tuple {pedido: PedidoDeCompra, status : pedido.status}
 --Tuple {fatura: Fatura, dataPagamento: fatura.prazo, valor : fatura.valor}
 --Tuple {dataPagamento: pagamento.data, valor: pagamento.valor}
 --Tuple {devolucao: Devolucao, data: devolucao.data}
---context Deposito::valorTotalVendas()
---post: recebeInformacao.recebe.valor.sum()
 --Tuple {livro : Livro, quantidade : livro.eimpresso.envialivro.quantidadeEstoque}
