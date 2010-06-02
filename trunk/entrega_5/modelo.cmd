@@ -46,3 +46,18 @@
 !insert(devolucao,setorComercial) into informaDevolucao
 !insert(devolucao,depositoABC) into  remeteLivro
 !insert(lojaDez,pedidoUm) into preenche
+!insert(lojaDez,setorComercial) into solicitaDevolucao
+!insert(setorComercial,devolucao) into preparaCheque
+!insert(devolucao,lojaDez) into eEfetuada
+!insert(lojaDez,bestseller) into compra
+!insert(lojaDez,bestseller) into cosultaDados
+!insert(joao,bestseller) into escrever
+!insert(setorComercial,faturaEncomenda) into faz
+!insert(pedidoUm,bestSellerPronto) into contem
+!insert(bestSellerPronto,bestSeller) into gerado
+!insert(entrega,faturaEntrega) into gera
+!insert(pagamento,lojaDez) into realizado
+!insert(pagamento,faturaEncomenda) into efetuado
+!insert(encomenda,faturaEncomenda) into possui
+!insert(depositoABC,encomenda) into envia
+
