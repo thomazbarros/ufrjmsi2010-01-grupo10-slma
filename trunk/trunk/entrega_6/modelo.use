@@ -1,0 +1,296 @@
+model EditoraABC
+
+class Autor
+operations
+	calculaDireitoAutoral(nomeLivro : String)
+	geraRelatorioTotalLivrosVendidos() : Integer
+	geraRelatorioTotalLivrosDevolvidos() : Integer
+	geraRelatorioTotalLivrosEstoque() : Integer
+end
+
+class Livro
+attributes
+	titulo : String
+	prazoDisponibilidade : String
+	custo : Real
+end
+
+class Editor
+end
+
+class Grafica
+end
+
+class Deposito
+attributes
+	quantidadeEstoque : Integer
+operations
+	atualizaQuantidadeEstoque(quantidadeRecebida : Integer)
+end
+
+class Livreiro
+operations
+	geraRelatorioPedidos() : Set(Pedido)
+	geraRelatorioFaturas() : Set(FaturaEncomenda)
+	geraRelatorioPagamentos() : Set(Pagamento)
+	geraRelatorioDevolucoes() : Set(Devolucao)
+end
+
+class Pedido
+attributes
+	quantidade : Integer
+	valor : Real
+	estado : String
+	formaEnvio : String
+end
+
+class SetorComercial
+operations
+	preparaCheque()
+	geraRelatorioTotalVendas() : Integer
+	geraRelatorioTotalDinheiroRecebido() : Real
+	geraRelatorioTotalLivrosEstoque() : Integer
+end
+
+class FaturaEncomenda
+attributes
+	forma : String
+	prazoPagamento : String
+end
+
+class FaturaEntrega
+attributes
+	dataVencimento : String
+end
+
+class Transportadora
+operations
+	calculaFrete(cidadeLivreiro : String) : Real
+end
+
+--Classe de associacao
+class LivroPronto
+attributes
+	quantidade : Integer
+end
+
+class Entrega
+attributes
+	custo : Real
+	dataEnvio : Integer
+	quantidade : Integer
+operations
+	calculaCusto(cidadeLivreiro : String) : Real
+end
+
+class Pagamento
+end
+
+class Devolucao
+attributes
+	valor : Real
+	dataDevolucao : Integer
+	motivo : String
+	quantidade : Integer
+end
+
+class Contrato
+attributes
+	taxa : Real
+	prazoValidade : String
+operations
+	especificaDivisaoDireitosAutorais()
+end
+
+class Encomenda
+attributes
+	custo : Real
+end
+	
+association assina between
+	Autor[1] role autor
+	Contrato[1] role contrato
+end
+
+association trabalha between
+	Autor[1..*] role autor
+	Editor[1..*] role editor
+end
+
+association solicitaCotacao between
+	Editor[1..*] role editor
+	Grafica[1] role grafica
+end
+
+association imprime between
+	Grafica[1..*] role grafica
+	Livro[1] role livro
+end
+
+association enviaLivro between
+	Grafica[1] role grafica
+	Deposito[1..*] role deposito
+end
+
+association prepara between
+	Deposito[1..*] role deposito
+	Entrega[*] role entrega
+end
+
+association realiza between
+	Transportadora[1..*] role transportadora
+	Entrega[*] role entrega
+end
+
+association recebe between
+	Deposito[1..*] role deposito
+	Pedido[*] role pedido
+end
+
+association informaEncomenda between
+	Encomenda[*] role encomenda
+	SetorComercial[1..*] role setorComercial
+end
+
+association informaDevolucao between
+	Devolucao[*] role devolucaoInforma
+	SetorComercial[1..*] role setorComercialDevolve
+end
+
+association remeteLivros between
+	Devolucao[1] role devolucao
+	Deposito[1] role deposito
+end
+
+association preenche between
+	Livreiro[1..*] role livreiro
+	Pedido[*] role pedido
+end
+
+association solicitaDevolucao between
+	Livreiro[1] role livreiro
+	SetorComercial[1] role setorComercial
+end
+
+association preparaCheque between
+	SetorComercial[1..*] role setorComercialPaga
+	Devolucao[*] role devolucaoPaga
+end
+
+association eEfetuada between
+	Devolucao[*] role devolucao
+	Livreiro[1..*] role livreiro
+end
+
+association compra between
+	Livreiro[1..*] role livreiroCompra
+	Livro[*] role livroCompra
+end
+
+association consultaDados between
+	Livreiro[1..*] role livreiroConsulta
+	Livro[*] role livroConsulta
+end
+
+association escrever between
+	Autor[1..*] role autor
+	Livro[*] role livro
+end
+
+association faz between
+	SetorComercial[1..*] role setorComercial
+	FaturaEncomenda[*] role faturaEncomenda
+end
+
+association contem between
+	Pedido[1..*] role pedido 
+	LivroPronto[*] role livroPronto
+end
+
+association gerado between
+	LivroPronto[1] role livroPronto
+	Livro[1] role livro
+end
+
+association gera between
+	Entrega[1] role entrega
+	FaturaEntrega[1] role faturaEntrega
+end
+
+association realizado between
+	Pagamento[*] role pagamento
+	Livreiro[1..*] role livreiro
+end
+
+association efetuado between
+	Pagamento[1] role pagamento
+	FaturaEncomenda[1] role faturaEncomenda
+end
+
+association possui between
+	Encomenda[1] role encomenda
+	FaturaEncomenda[1] role faturaEncomenda
+end
+
+association envia between
+	Deposito[1..*] role deposito
+	Encomenda[*] role encomenda
+end
+
+association recebeEntrega between
+	Livreiro[1..*] role livreiro
+	Entrega[*] role entrega
+end
+
+constraints
+
+context Deposito::atualizaQuantidadeEstoque(quantidadeRecebida : Integer)
+	post : quantidadeEstoque = quantidadeEstoque@pre + quantidadeRecebida
+
+context Livreiro::geraRelatorioPedidos() : Set(Pedido)
+	post : result = pedido
+  
+context Livreiro::geraRelatorioFaturas() : Set(FaturaEncomenda)
+	post : result = pagamento.faturaEncomenda
+
+context Livreiro::geraRelatorioPagamentos() : Set(Pagamento)
+	post : result = pagamento
+
+context Livreiro::geraRelatorioDevolucoes() : Set(Devolucao)
+	post : result = devolucao
+
+context SetorComercial::geraRelatorioTotalVendas() : Integer
+	post : result = encomenda.deposito.pedido.livroPronto.quantidade->sum()
+	
+context SetorComercial::geraRelatorioTotalDinheiroRecebido() : Real
+	post : result = encomenda.deposito.pedido.livroPronto.livro.custo->sum()
+	
+context SetorComercial::geraRelatorioTotalLivrosEstoque() : Integer
+	post : result = encomenda.deposito.quantidadeEstoque->sum()
+		
+context Autor::geraRelatorioTotalLivrosVendidos() : Integer
+	post : result = livro.livroPronto.pedido.deposito.entrega.quantidade->sum()
+	
+context Autor::geraRelatorioTotalLivrosDevolvidos() : Integer
+	post : result = livro.livroPronto.pedido.deposito.devolucao.quantidade->sum()
+
+context Autor::geraRelatorioTotalLivrosEstoque() : Integer
+	post : result = livro.livroPronto.pedido.deposito.quantidadeEstoque->sum()
+
+context Pedido
+	inv restricaoQuantidadePedido : quantidade > 10
+
+context Pedido
+	inv restricaoValorMinimo : valor >= 100
+
+--context Devolucao
+	--inv restricaoPedidoDevolucaoDanificado : motivo = 'Exemplares danificados' implies livreiro.entrega.dataEnvio + 30 <= dataDevolucao
+
+--context Livreiro::geraRelatorioPedidos() : Set(Pedido)
+	--body : pedido.valor->sum() < 10000
+	
+--Tuple {pedido: PedidoDeCompra, status : pedido.status}
+--Tuple {fatura: Fatura, dataPagamento: fatura.prazo, valor : fatura.valor}
+--Tuple {dataPagamento: pagamento.data, valor: pagamento.valor}
+--Tuple {devolucao: Devolucao, data: devolucao.data}
+--Tuple {livro : Livro, quantidade : livro.eimpresso.envialivro.quantidadeEstoque}
