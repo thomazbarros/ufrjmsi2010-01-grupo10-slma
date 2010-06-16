@@ -283,10 +283,10 @@ context Pedido
 context Pedido
 	inv restricaoValorMinimo : valor >= 100
 
---context Devolucao
-	--inv restricaoPedidoDevolucaoDanificado : motivo = 'Exemplares danificados' implies livreiro.entrega.dataEnvio + 30 <= dataDevolucao
+context Devolucao
+	inv restricaoPedidoDevolucaoDanificado : motivo = 'Exemplares danificados' implies (livreiro.entrega.dataEnvio)->asSequence()->first() + 30 <= self.dataDevolucao
 
---context Livreiro::geraRelatorioPedidos() : Set(Pedido)
+--context Livreiro::geraRelatorioPedidos() : Boolean
 	--body : pedido.valor->sum() < 10000
 	
 --Tuple {pedido: PedidoDeCompra, status : pedido.status}
