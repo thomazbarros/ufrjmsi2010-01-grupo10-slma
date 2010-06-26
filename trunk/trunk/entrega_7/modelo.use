@@ -120,14 +120,24 @@ end
 class E1 < Event
 attributes
 	answer : Set(Tuple(idpedido : Integer, idcliente : Integer, valortotal : Real))
-operation
+operations
 	effect()
 end
 
 class E2 < Event
 attributes
 	answer : Set(Tuple(idfatura : Integer, idcliente : Integer, valorpago : Real))
-operation
+operations
+	effect()
+end
+
+class E4 < Event
+operations
+	effect()
+end
+
+class E6 < Event
+operations
 	effect()
 end
 	
@@ -271,9 +281,19 @@ association relacaoE1Pedido between
 	E1[1] role e1
 end
 
-association relacaoE2Pedido between
+association relacaoE2Pagamento between
 	Pagamento[0..*] role pagamento
 	E2[1] role e2
+end
+
+association relacaoE4Livreiro between
+	Livreiro[1] role livreiro
+	E4[1] role e4
+end
+
+association relacaoE6Livreiro between
+	Livreiro[1] role livreiro
+	E6[1] role e6
 end
 
 constraints
@@ -328,6 +348,12 @@ context E1::effect()
 
 context E2::effect()
 	post: answer = (pagamento.collect(Tuple(idfatura=faturaEncomenda.id,idcliente=livreiro.id,valorpago=faturaEncomenda.valor)))->asSet()
+
+context E4::effect
+	post: (livreiro.pedido.estado)->asSequence()->first() = 'Enviado'
+
+context E6::effect()
+	post: (livreiro.pagamento.faturaEncomenda.pedido.estado)->asSequence()->first() = 'Pago'
 
 --set(Tuple {pedido: PedidoDeCompra, status : pedido.status}) = faksf.safjksf.set(k | Tuple(pedido = , status = )
 --Tuple {fatura: Fatura, dataPagamento: fatura.prazo, valor : fatura.valor}
