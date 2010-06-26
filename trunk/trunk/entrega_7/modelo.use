@@ -57,6 +57,8 @@ end
 
 class FaturaEncomenda
 attributes
+	id : Integer
+	valor : Real
 	forma : String
 	prazoPagamento : String
 end
@@ -118,6 +120,13 @@ end
 class E1 < Event
 attributes
 	answer : Set(Tuple(idpedido : Integer, idcliente : Integer, valortotal : Real))
+operation
+	effect()
+end
+
+class E2 < Event
+attributes
+	answer : Set(Tuple(idfatura : Integer, idcliente : Integer, valorpago : Real))
 operation
 	effect()
 end
@@ -262,6 +271,11 @@ association relacaoE1Pedido between
 	E1[1] role e1
 end
 
+association relacaoE2Pedido between
+	Pagamento[0..*] role pagamento
+	E2[1] role e2
+end
+
 constraints
 
 context Deposito::atualizaQuantidadeEstoque(quantidadeRecebida : Integer)
@@ -310,8 +324,11 @@ context Livreiro
 	inv restricaoValorPedido : pedido.valor->sum() < 10000
 
 context E1::effect()
-	post: answer = pedido.collect(Tuple(idpedido=id,idcliente=id,valortotal=valor))->asSet()
-	
+	post: answer = (pedido.collect(Tuple(idpedido=self.id,idcliente=livreiro.id,valortotal=self.valor)))->asSet()
+
+context E2::effect()
+	post: answer = (pagamento.collect(Tuple(idfatura=faturaEncomenda,idcliente=livreiro.id,valorpago=faturaEncomenda.valor)))->asSet()
+
 --set(Tuple {pedido: PedidoDeCompra, status : pedido.status}) = faksf.safjksf.set(k | Tuple(pedido = , status = )
 --Tuple {fatura: Fatura, dataPagamento: fatura.prazo, valor : fatura.valor}
 --Tuple {dataPagamento: pagamento.data, valor: pagamento.valor}
