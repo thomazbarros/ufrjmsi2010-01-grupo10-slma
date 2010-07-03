@@ -23,7 +23,7 @@ end
 
 class Deposito
 attributes
-	quantidadeEstoque : Integer
+	quantidadeEstoque : Tuple(livro : Livro, quantidade : Integer)
 operations
 	atualizaQuantidadeEstoque(quantidadeRecebida : Integer)
 end
@@ -31,11 +31,12 @@ end
 class Livreiro
 attributes
 	id : Integer
+	lista : Boolean
 operations
-	geraRelatorioPedidos() : Set(Pedido)
-	geraRelatorioFaturas() : Set(FaturaEncomenda)
-	geraRelatorioPagamentos() : Set(Pagamento)
-	geraRelatorioDevolucoes() : Set(Devolucao)
+	geraRelatorioPedidos() : Set(Tuple(pedido : Pedido, status : String))
+	geraRelatorioFaturas() : Set(Tuple(fatura : FaturaEncomenda, dataPagamento : Date, valorPago : Real))
+	geraRelatorioPagamentos() : Set(Tuple(dataPagamento : Date, valor : Real))
+	geraRelatorioDevolucoes() : Set(Tuple(devolucao : Devolucao, davataValidade : Date))
 end
 
 class Pedido
@@ -52,7 +53,7 @@ operations
 	preparaCheque()
 	geraRelatorioTotalVendas() : Integer
 	geraRelatorioTotalDinheiroRecebido() : Real
-	geraRelatorioTotalLivrosEstoque() : Integer
+	geraRelatorioTotalLivrosEstoque() : Set(Tuple(livro : Livro, quantidade : Integer))
 end
 
 class FaturaEncomenda
@@ -60,7 +61,7 @@ attributes
 	id : Integer
 	valor : Real
 	forma : String
-	prazoPagamento : String
+	prazo : Date
 end
 
 class FaturaEntrega
@@ -90,6 +91,8 @@ operations
 end
 
 class Pagamento
+attributes
+	data : Date
 end
 
 class Devolucao
@@ -103,7 +106,7 @@ end
 class Contrato
 attributes
 	taxa : Real
-	prazoValidade : String
+	prazoValidade : Date
 operations
 	especificaDivisaoDireitosAutorais()
 end
@@ -122,16 +125,16 @@ end
 
 class E1 < Event
 attributes
-	answer : Set(Tuple(idpedido : Integer, idcliente : Integer, valortotal : Real))
+	answer : Set(Tuple(idPedido : Integer, idCliente : Integer, valorTotal : Real))
 operations
-	effect()
+	effect() : Set(Tuple(idPedido : Integer, idCliente : Integer, valorTotal : Real))
 end
 
 class E2 < Event
 attributes
-	answer : Set(Tuple(idfatura : Integer, idcliente : Integer, valorpago : Real))
+	answer : Set(Tuple(idFatura : Integer, idCliente : Integer, valorPago : Real))
 operations
-	effect()
+	effect() : Set(Tuple(idFatura : Integer, idCliente : Integer, valorPago : Real))
 end
 
 class E3 < Event
@@ -140,6 +143,11 @@ operations
 end
 
 class E4 < Event
+operations
+	effect()
+end
+
+class E5 < Event
 operations
 	effect()
 end
@@ -304,6 +312,11 @@ association relacaoE4Livreiro between
 	E4[1] role e4
 end
 
+association relacaoE5Pedido between
+	Pedido[1] role pedido
+	E5[1] role e5
+end
+
 association relacaoE6Livreiro between
 	Livreiro[1] role livreiro
 	E6[1] role e6
@@ -314,17 +327,17 @@ constraints
 context Deposito::atualizaQuantidadeEstoque(quantidadeRecebida : Integer)
 	post : quantidadeEstoque = quantidadeEstoque@pre + quantidadeRecebida
 
-context Livreiro::geraRelatorioPedidos() : Set(Pedido)
-	post : result = pedido
+context Livreiro::geraRelatorioPedidos() : Set(Tuple(Pedido, String))
+	post : result = pedido.collect(Tuple{pedido=pedido, status=pedido.status})->asSet()
   
-context Livreiro::geraRelatorioFaturas() : Set(FaturaEncomenda)
-	post : result = pagamento.faturaEncomenda
+context Livreiro::geraRelatorioFaturas() : Set(Tuple(Fatura, Date, Real))
+	post : result = pagamento.faturaEncomenda.collect(Tuple{fatura=faturaEncomenda, dataPagamento=faturaEncomenda.prazo, valor=faturaEncomenda.valor})->asSet()
 
-context Livreiro::geraRelatorioPagamentos() : Set(Pagamento)
-	post : result = pagamento
+context Livreiro::geraRelatorioPagamentos() : Set(Tuple(Date, Real))
+	post : result = pagamento.collect(Tuple{dataPagamento=pagamento.data, valor=pagamento.valor})->asSet()
 
-context Livreiro::geraRelatorioDevolucoes() : Set(Devolucao)
-	post : result = devolucao
+context Livreiro::geraRelatorioDevolucoes() : Set(Tuple(Devolucao, Date))
+	post : result = devolucao.collect(Tuple{devolucao=devolucao=data.devolucao})->asSet()
 
 context SetorComercial::geraRelatorioTotalVendas() : Integer
 	post : result = encomenda.deposito.pedido.livroPronto.quantidade->sum()
@@ -332,8 +345,8 @@ context SetorComercial::geraRelatorioTotalVendas() : Integer
 context SetorComercial::geraRelatorioTotalDinheiroRecebido() : Real
 	post : result = encomenda.deposito.pedido.livroPronto.livro.custo->sum()
 	
-context SetorComercial::geraRelatorioTotalLivrosEstoque() : Integer
-	post : result = encomenda.deposito.quantidadeEstoque->sum()
+context SetorComercial::geraRelatorioTotalLivrosEstoque() : Set(Tuple(Livro, Integer))
+	post : result = encomenda->collect(Tuple{livro=encomenda.deposito.quantidadeEstoque.livro, quantidade=encomenda.deposito.quantidadeEstoque.quantidade->sum()})->asSet()
 		
 context Autor::geraRelatorioTotalLivrosVendidos() : Integer
 	post : result = livro.livroPronto.pedido.deposito.entrega.quantidade->sum()
@@ -356,24 +369,26 @@ context Devolucao
 context Livreiro
 	inv restricaoValorPedido : pedido.valor->sum() < 10000
 
-context E1::effect()
-	post : answer = (pedido.collect(Tuple{idpedido=self.id,idcliente=livreiro.id,valortotal=self.valor}))->asSet()
+context Livreiro
+	inv restricaoAtraso : pagamento.data > pagamento.faturaEncomenda.prazo + 90 implies self.lista=true
 
---context E2::effect()
-	--post : answer = (pagamento.collect(Tuple{idfatura=faturaEncomenda.id,idcliente=livreiro.id,valorpago=faturaEncomenda.valor}))->asSet()
+context Pedido
+	inv restricaoPedido : livreiro.lista = false
 
---context E3::effect(quantidade : Integer, dataRecebimento : Date)
-	--post : (grafica.deposito.entrega.quantidade)->asSequence()->first() = quantidade and (grafica.deposito.entrega.dataRecebimento)->asSequence()->first() = dataRecebimento
+context E1::effect() : Set(Tuple(Integer, Integer, Real))
+	post : answer = (pedido.collect(Tuple{idPedido=self.id,idCliente=livreiro.id,valorTotal=self.valor}))->asSet()
 
---context E4::effect()
-	--post : (livreiro.pedido.estado)->asSequence()->first() = 'Enviado pelo cliente'
+context E2::effect() : Set(Tuple(Integer, Integer, Real))
+	post : answer = (pagamento.collect(Tuple{idFatura=faturaEncomenda.id,idCliente=livreiro.id,valorPago=faturaEncomenda.valor}))->asSet()
 
---context E6::effect()
-	--post : (livreiro.pagamento.faturaEncomenda.pedido.estado)->asSequence()->first() = 'Pago'
+context E3::effect(quantidade : Integer, dataRecebimento : Date)
+	post : (grafica.deposito.entrega.quantidade)->asSequence()->first() = quantidade and (grafica.deposito.entrega.dataRecebimento)->asSequence()->first() = dataRecebimento
 
---set(Tuple {pedido: PedidoDeCompra, status : pedido.status}) = faksf.safjksf.set(k | Tuple(pedido = , status = )
---Tuple {fatura: Fatura, dataPagamento: fatura.prazo, valor : fatura.valor}
---Tuple {dataPagamento: pagamento.data, valor: pagamento.valor}
+context E4::effect()
+	post : (livreiro.pedido.estado)->asSequence()->first() = 'Enviado pelo cliente'
 
---Tuple {devolucao: Devolucao, data: devolucao.data}
---Tuple {livro : Livro, quantidade : livro.eimpresso.envialivro.quantidadeEstoque}
+context E5::effect()
+	post : (pedido.estado)->asSequence()->first() = 'Enviado para a transportadora'
+
+context E6::effect()
+	post : (livreiro.pagamento.faturaEncomenda.pedido.estado)->asSequence()->first() = 'Pago'
