@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<classes>
+   <domainclasses.head>
+      <project>Project Name</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>11/07/2010</date>
+      <time>22:30</time>
+   </domainclasses.head>
+   <classes.content>
+      <diagrams>
+         <diagram id="10">
+            <name>Postagem de pedido de compra</name>
+            <elements>
+               <element type="TObjClasse" idExternal="11" idInternal="12" xBeginning="169" yBeginning="125" xEnd="269" yEnd="187" removed="false" MostraAtributo="1" MostraOperacao="1">
+                  <name>Livro</name>
+               </element>
+               <element type="TObjClasse" idExternal="13" idInternal="14" xBeginning="466" yBeginning="107" xEnd="566" yEnd="205" removed="false" MostraAtributo="1" MostraOperacao="1">
+                  <name>Pedido</name>
+               </element>
+            </elements>
+            <links>
+               <link type="TObjAssociacao" id="15" idSource="12" idTarget="14" qtyBreaks="2" xText="328" yText="131" removed="false" cardOrigin="" cardDestination="" xCardOrigin="0" yCardOrigin="0" xCardDestination="0" yCardDestination="0">
+                  <name>
+                  </name>
+                  <breaks>
+                     <break x="269" y="156"/>
+                     <break x="466" y="156"/>
+                  </breaks>
+               </link>
+            </links>
+         </diagram>
+      </diagrams>
+   </classes.content>
+</classes>

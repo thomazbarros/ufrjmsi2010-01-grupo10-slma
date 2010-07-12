@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rules>
+   <rules.head>
+      <project>fluxo_cliente_coloca_pedido</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>11/07/2010</date>
+      <time>22:30:13</time>
+   </rules.head>
+   <rules.content>
+      <facts>
+         <supertypes/>
+         <parts/>
+         <attributes/>
+         <associations/>
+         <associatives/>
+      </facts>
+      <calculus/>
+      <derivation/>
+      <actionassertions/>
+      <permissions>
+         <simple/>
+         <limited/>
+      </permissions>
+      <obligations>
+         <simple/>
+         <limited/>
+      </obligations>
+      <prohibitions>
+         <simple/>
+         <limited/>
+      </prohibitions>
+   </rules.content>
+</rules>
