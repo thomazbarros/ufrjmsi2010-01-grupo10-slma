@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<business>
+   <business.head>
+      <project>fluxo_cliente_coloca_pedido</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>11/07/2010</date>
+      <time>22:30:13</time>
+   </business.head>
+   <business.content>
+      <name>fluxo_cliente_coloca_pedido</name>
+      <description>
+      </description>
+      <mission>
+      </mission>
+      <vision>
+      </vision>
+      <qtyGoals>0</qtyGoals>
+      <qtyQuantifiedgoals>0</qtyQuantifiedgoals>
+      <qtyResources>0</qtyResources>
+      <qtyRules>0</qtyRules>
+      <qtyTerms>0</qtyTerms>
+      <qtyFacts>0</qtyFacts>
+      <qtyProcesses>0</qtyProcesses>
+   </business.content>
+</business>

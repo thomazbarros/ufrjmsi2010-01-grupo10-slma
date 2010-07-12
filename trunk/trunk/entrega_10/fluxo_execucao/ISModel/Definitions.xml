@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions>
+   <definitions.head>
+      <project>Project Name</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>11/07/2010</date>
+      <time>22:30</time>
+   </definitions.head>
+   <definitions.content>
+      <activities/>
+      <signals/>
+      <objects/>
+      <actors/>
+      <usecases/>
+      <classes>
+         <class idElement="11">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes/>
+            <methods>
+               <method visibility="0">
+                  <name>consultaDados</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+            </methods>
+         </class>
+         <class idElement="13">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes/>
+            <methods>
+               <method visibility="0">
+                  <name>preenchePedido</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>selecionaTitulos</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>recebeDisponibilidade</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>recebeSituacaoCliente</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+            </methods>
+         </class>
+      </classes>
+      <associations/>
+      <states/>
+      <transitions/>
+      <swimlanes/>
+   </definitions.content>
+</definitions>

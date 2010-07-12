@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<is>
+   <is.head>
+      <project>Project Name</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>11/07/2010</date>
+      <time>22:30</time>
+   </is.head>
+   <is.content>
+      <name>fluxo_cliente_coloca_pedido</name>
+      <scope>
+      </scope>
+      <qtyUseCases>1</qtyUseCases>
+      <qtyClasses>1</qtyClasses>
+      <qtySequences>1</qtySequences>
+      <qtyStates>0</qtyStates>
+      <qtyProcesses>0</qtyProcesses>
+      <qtyElements>50</qtyElements>
+      <artifacts>
+         <artifact class="TObjAtor" idInternal="2" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Cliente</name>
+         </artifact>
+         <artifact class="TObjAtor" idInternal="4" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Sistema</name>
+         </artifact>
+         <artifact class="TObjCasoUso" idInternal="6" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Posta pedido de compra</name>
+         </artifact>
+         <artifact class="TObjClasse" idInternal="11" qty="2" assocObj="-1" qtyAssoc="0">
+            <name>Livro</name>
+         </artifact>
+         <artifact class="TObjClasse" idInternal="13" qty="2" assocObj="-1" qtyAssoc="0">
+            <name>Pedido</name>
+         </artifact>
+      </artifacts>
+      <diagrams>
+         <usecases>
+            <diagram id="1" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
+               <name>Postagem de pedido de compra</name>
+            </diagram>
+         </usecases>
+         <classes>
+            <diagram id="10" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
+               <name>Postagem de pedido de compra</name>
+            </diagram>
+         </classes>
+         <sequences>
+            <diagram id="16" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
+               <name>Postagem de pedido de compra</name>
+            </diagram>
+         </sequences>
+         <states/>
+         <processes/>
+      </diagrams>
+   </is.content>
+</is>
