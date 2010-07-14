@@ -4,15 +4,37 @@
       <project>Project Name</project>
       <tool>RAPDIS</tool>
       <version>1.0</version>
-      <date>11/07/2010</date>
-      <time>22:30</time>
+      <date>14/07/2010</date>
+      <time>11:20</time>
    </definitions.head>
    <definitions.content>
       <activities/>
       <signals/>
       <objects/>
-      <actors/>
-      <usecases/>
+      <actors>
+         <actor idElement="2">
+            <description>Cliente: Quer postar um pedido de compra de exemplares de livros.</description>
+         </actor>
+         <actor idElement="4">
+            <description>Quer garantir que o pedido seja efetuado de acordo com certas condições.</description>
+         </actor>
+      </actors>
+      <usecases>
+         <usecase idElement="6">
+            <actors>Cliente, Sistema</actors>
+            <scenario>1- Cliente consulta dados do livro.
+2- Cliente seleciona títulos de interesse.
+3- Cliente preenche pedido on-line.</scenario>
+            <precondition>
+            </precondition>
+            <poscondition>
+            </poscondition>
+            <exception>
+            </exception>
+            <extension>
+            </extension>
+         </usecase>
+      </usecases>
       <classes>
          <class idElement="11">
             <heranca>TObject</heranca>
