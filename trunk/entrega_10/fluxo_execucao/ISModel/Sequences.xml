@@ -4,8 +4,8 @@
       <project>Project Name</project>
       <tool>RAPDIS</tool>
       <version>1.0</version>
-      <date>11/07/2010</date>
-      <time>22:30</time>
+      <date>14/07/2010</date>
+      <time>11:20</time>
    </sequences.head>
    <sequences.content>
       <diagrams>
@@ -75,18 +75,18 @@
                      <break x="668" y="297"/>
                   </breaks>
                </link>
-               <link type="TObjMensagem" id="45" idSource="27" idTarget="22" qtyBreaks="2" xText="561" yText="305" removed="false" linkType="2">
+               <link type="TObjMensagem" id="45" idSource="27" idTarget="22" qtyBreaks="2" xText="562" yText="305" removed="false" linkType="2">
                   <name>recebeSituacaoCliente</name>
                   <breaks>
-                     <break x="666" y="320"/>
+                     <break x="668" y="320"/>
                      <break x="457" y="320"/>
                   </breaks>
                </link>
-               <link type="TObjMensagem" id="48" idSource="22" idTarget="31" qtyBreaks="2" xText="284" yText="318" removed="false" linkType="2">
+               <link type="TObjMensagem" id="48" idSource="22" idTarget="31" qtyBreaks="2" xText="285" yText="318" removed="false" linkType="2">
                   <name>Retorna Situação do Pedido</name>
                   <breaks>
                      <break x="457" y="333"/>
-                     <break x="111" y="333"/>
+                     <break x="114" y="333"/>
                   </breaks>
                </link>
                <link type="TObjMensagem" id="49" idSource="31" idTarget="22" qtyBreaks="2" xText="285" yText="191" removed="false" linkType="2">

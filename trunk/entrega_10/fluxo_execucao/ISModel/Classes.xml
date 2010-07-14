@@ -4,8 +4,8 @@
       <project>Project Name</project>
       <tool>RAPDIS</tool>
       <version>1.0</version>
-      <date>11/07/2010</date>
-      <time>22:30</time>
+      <date>14/07/2010</date>
+      <time>11:20</time>
    </domainclasses.head>
    <classes.content>
       <diagrams>
@@ -15,7 +15,7 @@
                <element type="TObjClasse" idExternal="11" idInternal="12" xBeginning="169" yBeginning="125" xEnd="269" yEnd="187" removed="false" MostraAtributo="1" MostraOperacao="1">
                   <name>Livro</name>
                </element>
-               <element type="TObjClasse" idExternal="13" idInternal="14" xBeginning="466" yBeginning="107" xEnd="566" yEnd="205" removed="false" MostraAtributo="1" MostraOperacao="1">
+               <element type="TObjClasse" idExternal="13" idInternal="14" xBeginning="466" yBeginning="107" xEnd="599" yEnd="205" removed="false" MostraAtributo="1" MostraOperacao="1">
                   <name>Pedido</name>
                </element>
             </elements>
