@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>14/07/2010</date>
-      <time>14:24</time>
+      <time>23:18</time>
    </usecases.head>
    <usecases.content>
       <diagrams>
@@ -37,6 +37,38 @@
                   <breaks>
                      <break x="384" y="137"/>
                      <break x="521" y="137"/>
+                  </breaks>
+               </link>
+            </links>
+         </diagram>
+         <diagram id="164">
+            <name>Postagem de pedido de compra</name>
+            <elements>
+               <element type="TObjAtor" idExternal="165" idInternal="166" xBeginning="77" yBeginning="100" xEnd="128" yEnd="151" removed="false">
+                  <name>Cliente</name>
+               </element>
+               <element type="TObjAtor" idExternal="167" idInternal="168" xBeginning="517" yBeginning="100" xEnd="568" yEnd="151" removed="false">
+                  <name>Sistema</name>
+               </element>
+               <element type="TObjCasoUso" idExternal="169" idInternal="170" xBeginning="253" yBeginning="99" xEnd="371" yEnd="149" removed="false">
+                  <name>Posta pedido de compra</name>
+               </element>
+            </elements>
+            <links>
+               <link type="TObjLinkCasoUso" id="171" idSource="166" idTarget="170" qtyBreaks="2" xText="189" yText="114" removed="false">
+                  <name>
+                  </name>
+                  <breaks>
+                     <break x="127" y="124"/>
+                     <break x="253" y="124"/>
+                  </breaks>
+               </link>
+               <link type="TObjLinkCasoUso" id="172" idSource="170" idTarget="168" qtyBreaks="2" xText="444" yText="122" removed="false">
+                  <name>
+                  </name>
+                  <breaks>
+                     <break x="371" y="124"/>
+                     <break x="517" y="124"/>
                   </breaks>
                </link>
             </links>
