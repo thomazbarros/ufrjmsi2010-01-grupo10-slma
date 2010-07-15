@@ -1,29 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<definitions>
-   <definitions.head>
-      <project>Project Name</project>
-      <tool>RAPDIS</tool>
-      <version>1.0</version>
-      <date>14/07/2010</date>
-      <time>21:48</time>
-   </definitions.head>
-   <definitions.content>
-      <activities/>
-      <signals/>
-      <objects/>
-      <actors>
-         <actor idElement="2">
-            <description>Cliente: Quer postar um pedido de compra de exemplares de livros.</description>
-         </actor>
-         <actor idElement="4">
-            <description>Quer garantir que o pedido seja efetuado de acordo com certas condições.</description>
-         </actor>
-      </actors>
-      <usecases/>
-      <classes/>
-      <associations/>
-      <states/>
-      <transitions/>
-      <swimlanes/>
-   </definitions.content>
-</definitions>
+<definitions><definitions.head><project>Project Name</project><tool>RAPDIS</tool><version>1.0</version><date>15/07/2010</date><time>09:17</time></definitions.head><definitions.content><activities><activity idElement="69" minimo="0" provavel="0" maximo="0"><description>post ConsultaDados: (Livreiro.allInstances-&gt;select(a | a.id = id)-&gt;size() = 1)</description><precondition></precondition><postcondition></postcondition><resources/></activity></activities><signals/><objects><object idElement="76"><description>name = d1
+random = true</description><activities><activity id="71"><probabilities><probability>50</probability></probabilities></activity><activity id="123"><probabilities><probability>50</probability></probabilities></activity></activities></object><object idElement="123"><description>name = m1</description><activities><activity id="85"><probabilities><probability>100</probability></probabilities></activity></activities></object><object idElement="89"><description>name = d2
+random = true</description><activities><activity id="92"><probabilities><probability>50</probability></probabilities></activity><activity id="100"><probabilities><probability>50</probability></probabilities></activity></activities></object><object idElement="97"><description>name = d3
+random = true</description><activities><activity id="108"><probabilities><probability>50</probability></probabilities></activity><activity id="113"><probabilities><probability>50</probability></probabilities></activity></activities></object><object idElement="129"><description>name = d4
+random = true</description><activities><activity id="134"><probabilities><probability>50</probability></probabilities></activity><activity id="132"><probabilities><probability>50</probability></probabilities></activity></activities></object><object idElement="146"><description>class Livreiro
+attributes
+	id : Integer
+	lista : Boolean
+operations
+	geraRelatorioPedidos() : Set(Tuple(pedido : Pedido, status : String))
+	geraRelatorioFaturas() : Set(Tuple(fatura : FaturaEncomenda, dataPagamento : Date, valorPago : Real))
+	geraRelatorioPagamentos() : Set(Tuple(dataPagamento : Date, valor : Real))
+	geraRelatorioDevolucoes() : Set(Tuple(devolucao : Devolucao, davataValidade : Date))
+end
+
+
+context Livreiro::geraRelatorioPedidos() : Set(Tuple(Pedido, String))
+	post : result = pedido.collect(Tuple{pedido=pedido, status=pedido.status})-&gt;asSet()
+  
+context Livreiro::geraRelatorioFaturas() : Set(Tuple(Fatura, Date, Real))
+	post : result = pagamento.faturaEncomenda.collect(Tuple{fatura=faturaEncomenda, dataPagamento=faturaEncomenda.prazo, valor=faturaEncomenda.valor})-&gt;asSet()
+
+context Livreiro::geraRelatorioPagamentos() : Set(Tuple(Date, Real))
+	post : result = pagamento.collect(Tuple{dataPagamento=pagamento.data, valor=pagamento.valor})-&gt;asSet()
+
+context Livreiro::geraRelatorioDevolucoes() : Set(Tuple(Devolucao, Date))
+	post : result = devolucao.collect(Tuple{devolucao=devolucao=data.devolucao})-&gt;asSet()</description></object><object idElement="138"><description>class Livro
+attributes
+	titulo : String
+	prazoDisponibilidade : String
+	custo : Real
+end</description></object><object idElement="140"><description>class Pedido
+attributes
+	quantidade : Integer
+	valor : Real
+	estado : String
+	formaEnvio : String
+	id : Integer
+end</description></object></objects><actors><actor idElement="2"><description>Cliente: Quer postar um pedido de compra de exemplares de livros.</description></actor><actor idElement="4"><description>Quer garantir que o pedido seja efetuado de acordo com certas condições.</description></actor></actors><usecases/><classes><class idElement="174"><heranca>TObject</heranca><classtype>0</classtype><description></description><atributes><attribute visibility="0" type="INTEGER"><name>id</name></attribute><attribute visibility="0" type="BOOLEAN"><name>lista</name></attribute></atributes><methods><method visibility="0"><name>geraRelatorioPedidos</name><description></description><parameters/><testcases/></method><method visibility="0"><name>geraRelatorioFaturas</name><description></description><parameters/><testcases/></method><method visibility="0"><name>geraRelatorioPagamentos</name><description></description><parameters/><testcases/></method><method visibility="0"><name>geraRelatorioDevolucoes</name><description></description><parameters/><testcases/></method></methods></class><class idElement="176"><heranca>TObject</heranca><classtype>0</classtype><description></description><atributes><attribute visibility="0" type="INTEGER"><name>quantidade</name></attribute><attribute visibility="0" type="REAL"><name>valor</name></attribute><attribute visibility="0" type="STRING"><name>estado</name></attribute><attribute visibility="0" type="STRING"><name>formaEnvio</name></attribute><attribute visibility="0" type="INTEGER"><name>id</name></attribute></atributes><methods/></class><class idElement="178"><heranca>TObject</heranca><classtype>0</classtype><description></description><atributes><attribute visibility="0" type="STRING"><name>titulo</name></attribute><attribute visibility="0" type="STRING"><name>prazoDisponibilidade</name></attribute><attribute visibility="0" type="REAL"><name>custo</name></attribute></atributes><methods/></class><class idElement="184"><heranca>TObject</heranca><classtype>0</classtype><description></description><atributes><attribute visibility="0" type="INTEGER"><name>quantidade</name></attribute></atributes><methods/></class></classes><associations><association idLink="182"><role>compra</role><roleClass1>livreiroCompra</roleClass1><cardinalityClass1>1..*</cardinalityClass1><roleClass2>livroCompra</roleClass2><cardinalityClass2>*</cardinalityClass2><notes></notes></association><association idLink="183"><role>consultaDados</role><roleClass1>livreiroConsulta</roleClass1><cardinalityClass1>1..*</cardinalityClass1><roleClass2>livroConsulta</roleClass2><cardinalityClass2>*</cardinalityClass2><notes></notes></association><association idLink="191"><role>gerado</role><roleClass1>livro</roleClass1><cardinalityClass1>1..1</cardinalityClass1><roleClass2>livroPronto</roleClass2><cardinalityClass2>1..1</cardinalityClass2><notes></notes></association><association idLink="192"><role>contem</role><roleClass1>pedido</roleClass1><cardinalityClass1>1..*</cardinalityClass1><roleClass2>livroPronto</roleClass2><cardinalityClass2>*</cardinalityClass2><notes></notes></association></associations><states/><transitions/><swimlanes/></definitions.content></definitions>
