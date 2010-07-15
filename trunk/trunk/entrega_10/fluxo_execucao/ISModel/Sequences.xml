@@ -5,97 +5,15 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>14/07/2010</date>
-      <time>11:20</time>
+      <time>14:24</time>
    </sequences.head>
    <sequences.content>
       <diagrams>
          <diagram id="16">
             <name>Postagem de pedido de compra</name>
             <elements>
-               <element type="TObjObjeto" idExternal="11" idInternal="18" xBeginning="222" yBeginning="50" xEnd="322" yEnd="100" removed="false" xLifeLine="272" yLifeLine="300">
-                  <name>livro</name>
-               </element>
-               <element type="TObjObjeto" idExternal="13" idInternal="22" xBeginning="407" yBeginning="50" xEnd="507" yEnd="100" removed="false" xLifeLine="457" yLifeLine="369">
-                  <name>pedido</name>
-               </element>
-               <element type="TObjAtorDinamico" idExternal="4" idInternal="27" xBeginning="643" yBeginning="50" xEnd="693" yEnd="101" removed="false" xLifeLine="668" yLifeLine="351">
-                  <name>Sistema</name>
-               </element>
-               <element type="TObjAtorDinamico" idExternal="2" idInternal="31" xBeginning="89" yBeginning="50" xEnd="140" yEnd="101" removed="false" xLifeLine="114" yLifeLine="369">
-                  <name>Cliente</name>
-               </element>
             </elements>
             <links>
-               <link type="TObjMensagem" id="32" idSource="31" idTarget="18" qtyBreaks="2" xText="193" yText="119" removed="false" linkType="2">
-                  <name>consultaDados</name>
-                  <breaks>
-                     <break x="114" y="134"/>
-                     <break x="272" y="134"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="33" idSource="18" idTarget="31" qtyBreaks="2" xText="193" yText="146" removed="false" linkType="2">
-                  <name>Retorna Dados</name>
-                  <breaks>
-                     <break x="272" y="161"/>
-                     <break x="114" y="161"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="35" idSource="22" idTarget="27" qtyBreaks="2" xText="562" yText="203" removed="false" linkType="2">
-                  <name>Verifica Disponibilidade</name>
-                  <breaks>
-                     <break x="457" y="218"/>
-                     <break x="668" y="218"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="38" idSource="27" idTarget="22" qtyBreaks="2" xText="562" yText="225" removed="false" linkType="2">
-                  <name>recebeDisponibilidade</name>
-                  <breaks>
-                     <break x="668" y="240"/>
-                     <break x="457" y="240"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="39" idSource="22" idTarget="31" qtyBreaks="2" xText="285" yText="238" removed="false" linkType="2">
-                  <name>Retorna Disponibilidade</name>
-                  <breaks>
-                     <break x="457" y="253"/>
-                     <break x="114" y="253"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="41" idSource="31" idTarget="22" qtyBreaks="2" xText="285" yText="265" removed="false" linkType="2">
-                  <name>preenchePedido</name>
-                  <breaks>
-                     <break x="114" y="280"/>
-                     <break x="457" y="280"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="43" idSource="22" idTarget="27" qtyBreaks="2" xText="562" yText="282" removed="false" linkType="2">
-                  <name>Verifica Situação do Cliente</name>
-                  <breaks>
-                     <break x="457" y="297"/>
-                     <break x="668" y="297"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="45" idSource="27" idTarget="22" qtyBreaks="2" xText="562" yText="305" removed="false" linkType="2">
-                  <name>recebeSituacaoCliente</name>
-                  <breaks>
-                     <break x="668" y="320"/>
-                     <break x="457" y="320"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="48" idSource="22" idTarget="31" qtyBreaks="2" xText="285" yText="318" removed="false" linkType="2">
-                  <name>Retorna Situação do Pedido</name>
-                  <breaks>
-                     <break x="457" y="333"/>
-                     <break x="114" y="333"/>
-                  </breaks>
-               </link>
-               <link type="TObjMensagem" id="49" idSource="31" idTarget="22" qtyBreaks="2" xText="285" yText="191" removed="false" linkType="2">
-                  <name>selecionaTitulos</name>
-                  <breaks>
-                     <break x="114" y="206"/>
-                     <break x="457" y="206"/>
-                  </breaks>
-               </link>
             </links>
          </diagram>
       </diagrams>
