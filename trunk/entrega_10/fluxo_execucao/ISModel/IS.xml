@@ -5,53 +5,60 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>14/07/2010</date>
-      <time>11:20</time>
+      <time>21:48</time>
    </is.head>
    <is.content>
       <name>fluxo_cliente_coloca_pedido</name>
       <scope>
       </scope>
-      <qtyUseCases>1</qtyUseCases>
-      <qtyClasses>1</qtyClasses>
-      <qtySequences>1</qtySequences>
+      <qtyUseCases>0</qtyUseCases>
+      <qtyClasses>0</qtyClasses>
+      <qtySequences>0</qtySequences>
       <qtyStates>0</qtyStates>
-      <qtyProcesses>0</qtyProcesses>
-      <qtyElements>50</qtyElements>
+      <qtyProcesses>1</qtyProcesses>
+      <qtyElements>152</qtyElements>
       <artifacts>
-         <artifact class="TObjAtor" idInternal="2" qty="1" assocObj="-1" qtyAssoc="0">
-            <name>Cliente</name>
+         <artifact class="TObjAtividade" idInternal="69" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Consulta Dados</name>
          </artifact>
-         <artifact class="TObjAtor" idInternal="4" qty="1" assocObj="-1" qtyAssoc="0">
-            <name>Sistema</name>
+         <artifact class="TObjAtividade" idInternal="71" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Cria Cliente</name>
          </artifact>
-         <artifact class="TObjCasoUso" idInternal="6" qty="1" assocObj="-1" qtyAssoc="0">
-            <name>Posta pedido de compra</name>
+         <artifact class="TObjAtividade" idInternal="85" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Seleciona Título</name>
          </artifact>
-         <artifact class="TObjClasse" idInternal="11" qty="2" assocObj="-1" qtyAssoc="0">
+         <artifact class="TObjAtividade" idInternal="92" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Preenche Pedido</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="113" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Verifica lista negra</name>
+         </artifact>
+         <artifact class="TObjDesvioMerge" idInternal="116" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>DESVIO</name>
+         </artifact>
+         <artifact class="TObjDesvioMerge" idInternal="121" qty="3" assocObj="-1" qtyAssoc="0">
+            <name>MERGE</name>
+         </artifact>
+         <artifact class="TObjInsumoProduto" idInternal="138" qty="1" assocObj="-1" qtyAssoc="0">
             <name>Livro</name>
          </artifact>
-         <artifact class="TObjClasse" idInternal="13" qty="2" assocObj="-1" qtyAssoc="0">
+         <artifact class="TObjInsumoProduto" idInternal="140" qty="1" assocObj="-1" qtyAssoc="0">
             <name>Pedido</name>
+         </artifact>
+         <artifact class="TObjInsumoProduto" idInternal="146" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Livreiro</name>
          </artifact>
       </artifacts>
       <diagrams>
-         <usecases>
-            <diagram id="1" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
-               <name>Postagem de pedido de compra</name>
-            </diagram>
-         </usecases>
-         <classes>
-            <diagram id="10" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
-               <name>Postagem de pedido de compra</name>
-            </diagram>
-         </classes>
-         <sequences>
-            <diagram id="16" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
-               <name>Postagem de pedido de compra</name>
-            </diagram>
-         </sequences>
+         <usecases/>
+         <classes/>
+         <sequences/>
          <states/>
-         <processes/>
+         <processes>
+            <diagram id="68" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
+               <name>Postagem de pedido de compra</name>
+            </diagram>
+         </processes>
       </diagrams>
    </is.content>
 </is>

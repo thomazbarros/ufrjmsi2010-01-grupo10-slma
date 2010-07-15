@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>14/07/2010</date>
-      <time>11:20</time>
+      <time>21:48</time>
    </definitions.head>
    <definitions.content>
       <activities/>
@@ -19,77 +19,8 @@
             <description>Quer garantir que o pedido seja efetuado de acordo com certas condições.</description>
          </actor>
       </actors>
-      <usecases>
-         <usecase idElement="6">
-            <actors>Cliente, Sistema</actors>
-            <scenario>1- Cliente consulta dados do livro.
-2- Cliente seleciona títulos de interesse.
-3- Cliente preenche pedido on-line.</scenario>
-            <precondition>
-            </precondition>
-            <poscondition>
-            </poscondition>
-            <exception>
-            </exception>
-            <extension>
-            </extension>
-         </usecase>
-      </usecases>
-      <classes>
-         <class idElement="11">
-            <heranca>TObject</heranca>
-            <classtype>0</classtype>
-            <description>
-            </description>
-            <atributes/>
-            <methods>
-               <method visibility="0">
-                  <name>consultaDados</name>
-                  <description>
-                  </description>
-                  <parameters/>
-                  <testcases/>
-               </method>
-            </methods>
-         </class>
-         <class idElement="13">
-            <heranca>TObject</heranca>
-            <classtype>0</classtype>
-            <description>
-            </description>
-            <atributes/>
-            <methods>
-               <method visibility="0">
-                  <name>preenchePedido</name>
-                  <description>
-                  </description>
-                  <parameters/>
-                  <testcases/>
-               </method>
-               <method visibility="0">
-                  <name>selecionaTitulos</name>
-                  <description>
-                  </description>
-                  <parameters/>
-                  <testcases/>
-               </method>
-               <method visibility="0">
-                  <name>recebeDisponibilidade</name>
-                  <description>
-                  </description>
-                  <parameters/>
-                  <testcases/>
-               </method>
-               <method visibility="0">
-                  <name>recebeSituacaoCliente</name>
-                  <description>
-                  </description>
-                  <parameters/>
-                  <testcases/>
-               </method>
-            </methods>
-         </class>
-      </classes>
+      <usecases/>
+      <classes/>
       <associations/>
       <states/>
       <transitions/>
