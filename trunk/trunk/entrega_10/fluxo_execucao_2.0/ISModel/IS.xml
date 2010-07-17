@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<is>
+   <is.head>
+      <project>Project Name</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>17/07/2010</date>
+      <time>11:50</time>
+   </is.head>
+   <is.content>
+      <name>
+      </name>
+      <scope>
+      </scope>
+      <qtyUseCases>1</qtyUseCases>
+      <qtyClasses>0</qtyClasses>
+      <qtySequences>0</qtySequences>
+      <qtyStates>0</qtyStates>
+      <qtyProcesses>1</qtyProcesses>
+      <qtyElements>98</qtyElements>
+      <artifacts>
+         <artifact class="TObjAtividade" idInternal="4" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Consulta Dados</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="6" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Cria Cliente</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="8" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Seleciona Título</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="10" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Preenche Pedido</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="12" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Verifica Lista Negra</name>
+         </artifact>
+         <artifact class="TObjInsumoProduto" idInternal="23" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Livreiro</name>
+         </artifact>
+         <artifact class="TObjInsumoProduto" idInternal="27" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Livro</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="86" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Operação Abortada</name>
+         </artifact>
+         <artifact class="TObjInsumoProduto" idInternal="91" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Pedido</name>
+         </artifact>
+         <artifact class="TObjAtor" idInternal="95" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Cliente</name>
+         </artifact>
+         <artifact class="TObjAtor" idInternal="97" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Sistema</name>
+         </artifact>
+      </artifacts>
+      <diagrams>
+         <usecases>
+            <diagram id="94">
+               <name>Postagem de pedido de compra</name>
+            </diagram>
+         </usecases>
+         <classes/>
+         <sequences/>
+         <states/>
+         <processes>
+            <diagram id="1">
+               <name>Postagem de pedido de compra</name>
+            </diagram>
+         </processes>
+      </diagrams>
+   </is.content>
+</is>
