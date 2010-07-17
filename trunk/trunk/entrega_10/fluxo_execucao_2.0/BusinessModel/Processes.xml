@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>12:16</time>
+      <time>14:04</time>
    </processes.head>
    <processes.content>
       <diagrams>
@@ -282,7 +282,7 @@
                <element type="TObjAtividade" idExternal="6" idInternal="7" xBeginning="267" yBeginning="165" xEnd="367" yEnd="215" removed="false" objectType="0">
                   <name>Cria Cliente</name>
                </element>
-               <element type="TObjAtividade" idExternal="8" idInternal="9" xBeginning="38" yBeginning="366" xEnd="138" yEnd="416" removed="false" objectType="">
+               <element type="TObjAtividade" idExternal="8" idInternal="9" xBeginning="38" yBeginning="366" xEnd="138" yEnd="416" removed="false" objectType="0">
                   <name>Seleciona Título</name>
                </element>
                <element type="TObjAtividade" idExternal="10" idInternal="11" xBeginning="470" yBeginning="459" xEnd="570" yEnd="509" removed="false" objectType="">
@@ -291,19 +291,19 @@
                <element type="TObjAtividade" idExternal="12" idInternal="13" xBeginning="868" yBeginning="368" xEnd="968" yEnd="418" removed="false" objectType="">
                   <name>Verifica Lista Negra</name>
                </element>
-               <element type="TObjDesvioMerge" idExternal="14" idInternal="15" xBeginning="64" yBeginning="164" xEnd="114" yEnd="214" removed="false" objectType="">
+               <element type="TObjDesvioMerge" idExternal="14" idInternal="15" xBeginning="64" yBeginning="164" xEnd="114" yEnd="214" removed="false" objectType="0">
                   <name>DESVIO</name>
                </element>
-               <element type="TObjDesvioMerge" idExternal="16" idInternal="17" xBeginning="63" yBeginning="269" xEnd="113" yEnd="319" removed="false" objectType="">
+               <element type="TObjDesvioMerge" idExternal="16" idInternal="17" xBeginning="63" yBeginning="269" xEnd="113" yEnd="319" removed="false" objectType="0">
                   <name>MERGE</name>
                </element>
-               <element type="TObjInsumoProduto" idExternal="23" idInternal="24" xBeginning="266" yBeginning="49" xEnd="366" yEnd="99" removed="false" objectType="Insumo/Produto" resourceId="">
+               <element type="TObjInsumoProduto" idExternal="23" idInternal="24" xBeginning="266" yBeginning="71" xEnd="366" yEnd="121" removed="false" objectType="Insumo/Produto" resourceId="">
                   <name>Livreiro</name>
                </element>
                <element type="TObjInsumoProduto" idExternal="27" idInternal="28" xBeginning="37" yBeginning="499" xEnd="137" yEnd="549" removed="false" objectType="Insumo/Produto" resourceId="">
                   <name>Livro</name>
                </element>
-               <element type="TObjDesvioMerge" idExternal="31" idInternal="32" xBeginning="219" yBeginning="367" xEnd="269" yEnd="417" removed="false" objectType="">
+               <element type="TObjDesvioMerge" idExternal="31" idInternal="32" xBeginning="219" yBeginning="367" xEnd="269" yEnd="417" removed="false" objectType="0">
                   <name>DESVIO</name>
                </element>
                <element type="TObjComentario" idExternal="35" idInternal="36" xBeginning="254" yBeginning="439" xEnd="457" yEnd="459" removed="false">
@@ -315,13 +315,13 @@
                <element type="TObjComentario" idExternal="39" idInternal="40" xBeginning="46" yBeginning="177" xEnd="64" yEnd="197" removed="false">
                   <name>d1</name>
                </element>
-               <element type="TObjComentario" idExternal="41" idInternal="42" xBeginning="44" yBeginning="284" xEnd="66" yEnd="304" removed="false">
+               <element type="TObjComentario" idExternal="41" idInternal="42" xBeginning="39" yBeginning="283" xEnd="61" yEnd="303" removed="false">
                   <name>m1</name>
                </element>
-               <element type="TObjDesvioMerge" idExternal="43" idInternal="44" xBeginning="655" yBeginning="369" xEnd="705" yEnd="419" removed="false" objectType="">
+               <element type="TObjDesvioMerge" idExternal="43" idInternal="44" xBeginning="655" yBeginning="369" xEnd="705" yEnd="419" removed="false" objectType="0">
                   <name>DESVIO</name>
                </element>
-               <element type="TObjDesvioMerge" idExternal="45" idInternal="46" xBeginning="892" yBeginning="245" xEnd="942" yEnd="295" removed="false" objectType="">
+               <element type="TObjDesvioMerge" idExternal="45" idInternal="46" xBeginning="892" yBeginning="245" xEnd="942" yEnd="295" removed="false" objectType="0">
                   <name>DESVIO</name>
                </element>
                <element type="TObjComentario" idExternal="47" idInternal="48" xBeginning="234" yBeginning="339" xEnd="252" yEnd="359" removed="false">
@@ -401,7 +401,7 @@
                   </name>
                   <breaks>
                      <break x="316" y="165"/>
-                     <break x="316" y="99"/>
+                     <break x="316" y="121"/>
                   </breaks>
                </link>
                <link type="TObjFluxoCheio" id="26" idSource="17" idTarget="9" qtyBreaks="2" xText="97" yText="343" removed="false">
@@ -519,6 +519,14 @@
                   <breaks>
                      <break x="520" y="459"/>
                      <break x="520" y="409"/>
+                  </breaks>
+               </link>
+               <link type="TObjDependencia" id="122" idSource="24" idTarget="5" qtyBreaks="2" xText="202" yText="84" removed="false">
+                  <name>
+                  </name>
+                  <breaks>
+                     <break x="266" y="96"/>
+                     <break x="139" y="96"/>
                   </breaks>
                </link>
             </links>
