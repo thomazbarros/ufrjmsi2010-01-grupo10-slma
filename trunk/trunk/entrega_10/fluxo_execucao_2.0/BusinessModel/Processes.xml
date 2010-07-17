@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>11:44</time>
+      <time>12:16</time>
    </processes.head>
    <processes.content>
       <diagrams>
@@ -288,7 +288,7 @@
                <element type="TObjAtividade" idExternal="10" idInternal="11" xBeginning="470" yBeginning="459" xEnd="570" yEnd="509" removed="false" objectType="">
                   <name>Preenche Pedido</name>
                </element>
-               <element type="TObjAtividade" idExternal="12" idInternal="13" xBeginning="772" yBeginning="369" xEnd="872" yEnd="419" removed="false" objectType="">
+               <element type="TObjAtividade" idExternal="12" idInternal="13" xBeginning="868" yBeginning="368" xEnd="968" yEnd="418" removed="false" objectType="">
                   <name>Verifica Lista Negra</name>
                </element>
                <element type="TObjDesvioMerge" idExternal="14" idInternal="15" xBeginning="64" yBeginning="164" xEnd="114" yEnd="214" removed="false" objectType="">
@@ -321,7 +321,7 @@
                <element type="TObjDesvioMerge" idExternal="43" idInternal="44" xBeginning="655" yBeginning="369" xEnd="705" yEnd="419" removed="false" objectType="">
                   <name>DESVIO</name>
                </element>
-               <element type="TObjDesvioMerge" idExternal="45" idInternal="46" xBeginning="796" yBeginning="244" xEnd="846" yEnd="294" removed="false" objectType="">
+               <element type="TObjDesvioMerge" idExternal="45" idInternal="46" xBeginning="892" yBeginning="245" xEnd="942" yEnd="295" removed="false" objectType="">
                   <name>DESVIO</name>
                </element>
                <element type="TObjComentario" idExternal="47" idInternal="48" xBeginning="234" yBeginning="339" xEnd="252" yEnd="359" removed="false">
@@ -330,10 +330,10 @@
                <element type="TObjComentario" idExternal="49" idInternal="50" xBeginning="625" yBeginning="389" xEnd="643" yEnd="409" removed="false">
                   <name>d3</name>
                </element>
-               <element type="TObjComentario" idExternal="51" idInternal="52" xBeginning="868" yBeginning="243" xEnd="886" yEnd="263" removed="false">
+               <element type="TObjComentario" idExternal="51" idInternal="52" xBeginning="951" yBeginning="259" xEnd="969" yEnd="279" removed="false">
                   <name>d4</name>
                </element>
-               <element type="TObjEstadoFinal" idExternal="58" idInternal="59" xBeginning="811" yBeginning="146" xEnd="831" yEnd="166" removed="false">
+               <element type="TObjEstadoFinal" idExternal="58" idInternal="59" xBeginning="907" yBeginning="142" xEnd="927" yEnd="162" removed="false">
                   <name>
                   </name>
                </element>
@@ -344,11 +344,14 @@
                   <name>
                   </name>
                </element>
-               <element type="TObjComentario" idExternal="89" idInternal="90" xBeginning="653" yBeginning="195" xEnd="816" yEnd="215" removed="false">
+               <element type="TObjComentario" idExternal="89" idInternal="90" xBeginning="745" yBeginning="186" xEnd="908" yEnd="206" removed="false">
                   <name>Não está na lista negra</name>
                </element>
                <element type="TObjInsumoProduto" idExternal="91" idInternal="92" xBeginning="471" yBeginning="359" xEnd="571" yEnd="409" removed="false" objectType="Insumo/Produto" resourceId="">
                   <name>Pedido</name>
+               </element>
+               <element type="TObjComentario" idExternal="118" idInternal="119" xBeginning="694" yBeginning="355" xEnd="870" yEnd="375" removed="false">
+                  <name>Débito menor que 10000</name>
                </element>
             </elements>
             <links>
@@ -439,24 +442,24 @@
                   <name>
                   </name>
                   <breaks>
-                     <break x="705" y="394"/>
-                     <break x="772" y="394"/>
+                     <break x="705" y="393"/>
+                     <break x="868" y="393"/>
                   </breaks>
                </link>
                <link type="TObjFluxoCheio" id="55" idSource="13" idTarget="46" qtyBreaks="2" xText="836" yText="319" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="821" y="369"/>
-                     <break x="821" y="294"/>
+                     <break x="917" y="368"/>
+                     <break x="917" y="295"/>
                   </breaks>
                </link>
                <link type="TObjFluxoCheio" id="61" idSource="46" idTarget="59" qtyBreaks="2" xText="834" yText="199" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="821" y="244"/>
-                     <break x="821" y="166"/>
+                     <break x="917" y="245"/>
+                     <break x="917" y="162"/>
                   </breaks>
                </link>
                <link type="TObjFluxoCheio" id="79" idSource="32" idTarget="72" qtyBreaks="3" xText="358" yText="336" removed="false">
@@ -480,7 +483,7 @@
                   <name>
                   </name>
                   <breaks>
-                     <break x="796" y="269"/>
+                     <break x="892" y="269"/>
                      <break x="613" y="269"/>
                   </breaks>
                </link>

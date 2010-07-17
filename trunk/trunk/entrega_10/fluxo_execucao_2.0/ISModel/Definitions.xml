@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>11:50</time>
+      <time>12:16</time>
    </definitions.head>
    <definitions.content>
       <activities/>
@@ -13,8 +13,153 @@
       <objects/>
       <actors/>
       <usecases/>
-      <classes/>
-      <associations/>
+      <classes>
+         <class idElement="105">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="INTEGER">
+                  <name>id</name>
+               </attribute>
+               <attribute visibility="0" type="BOOLEAN">
+                  <name>lista</name>
+               </attribute>
+            </atributes>
+            <methods>
+               <method visibility="0">
+                  <name>geraRelatorioPedidos</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>geraRelatorioFaturas</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>geraRelatorioPagamentos</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>geraRelatorioDevolucoes</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+            </methods>
+         </class>
+         <class idElement="107">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="INTEGER">
+                  <name>quantidade</name>
+               </attribute>
+               <attribute visibility="0" type="REAL">
+                  <name>valor</name>
+               </attribute>
+               <attribute visibility="0" type="STRING">
+                  <name>estado</name>
+               </attribute>
+               <attribute visibility="0" type="STRING">
+                  <name>formaEnvio</name>
+               </attribute>
+               <attribute visibility="0" type="INTEGER">
+                  <name>id</name>
+               </attribute>
+            </atributes>
+            <methods/>
+         </class>
+         <class idElement="109">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="INTEGER">
+                  <name>quantidade</name>
+               </attribute>
+            </atributes>
+            <methods/>
+         </class>
+         <class idElement="111">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="STRING">
+                  <name>titulo</name>
+               </attribute>
+               <attribute visibility="0" type="STRING">
+                  <name>prazoDisponibilidade</name>
+               </attribute>
+               <attribute visibility="0" type="REAL">
+                  <name>custo</name>
+               </attribute>
+            </atributes>
+            <methods/>
+         </class>
+      </classes>
+      <associations>
+         <association idLink="113">
+            <role>contem</role>
+            <roleClass1>livroPronto</roleClass1>
+            <cardinalityClass1>*</cardinalityClass1>
+            <roleClass2>pedido</roleClass2>
+            <cardinalityClass2>1..*</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="114">
+            <role>gerado</role>
+            <roleClass1>livro</roleClass1>
+            <cardinalityClass1>1..1</cardinalityClass1>
+            <roleClass2>livroPronto</roleClass2>
+            <cardinalityClass2>1..1</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="115">
+            <role>consultaDados</role>
+            <roleClass1>livro</roleClass1>
+            <cardinalityClass1>1..1</cardinalityClass1>
+            <roleClass2>livreiro</roleClass2>
+            <cardinalityClass2>1..*</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="116">
+            <role>compra</role>
+            <roleClass1>livreiro</roleClass1>
+            <cardinalityClass1>1..*</cardinalityClass1>
+            <roleClass2>livro</roleClass2>
+            <cardinalityClass2>1..1</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="117">
+            <role>contem</role>
+            <roleClass1>livroPronto</roleClass1>
+            <cardinalityClass1>*</cardinalityClass1>
+            <roleClass2>pedido</roleClass2>
+            <cardinalityClass2>1..*</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+      </associations>
       <states/>
       <transitions/>
       <swimlanes/>
