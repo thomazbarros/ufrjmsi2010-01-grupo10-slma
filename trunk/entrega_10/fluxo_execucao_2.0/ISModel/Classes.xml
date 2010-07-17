@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<classes>
+   <domainclasses.head>
+      <project>Project Name</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>17/07/2010</date>
+      <time>12:16</time>
+   </domainclasses.head>
+   <classes.content>
+      <diagrams>
+         <diagram id="104">
+            <name>Postagem de pedido de compra</name>
+            <elements>
+               <element type="TObjClasse" idExternal="105" idInternal="106" xBeginning="139" yBeginning="38" xEnd="304" yEnd="160" removed="false" MostraAtributo="1" MostraOperacao="1">
+                  <name>Livreiro</name>
+               </element>
+               <element type="TObjClasse" idExternal="107" idInternal="108" xBeginning="575" yBeginning="46" xEnd="711" yEnd="156" removed="false" MostraAtributo="1" MostraOperacao="1">
+                  <name>Pedido</name>
+               </element>
+               <element type="TObjClasse" idExternal="109" idInternal="110" xBeginning="574" yBeginning="299" xEnd="711" yEnd="361" removed="false" MostraAtributo="1" MostraOperacao="1">
+                  <name>LivroPronto</name>
+               </element>
+               <element type="TObjClasse" idExternal="111" idInternal="112" xBeginning="126" yBeginning="286" xEnd="315" yEnd="372" removed="false" MostraAtributo="1" MostraOperacao="1">
+                  <name>Livro</name>
+               </element>
+            </elements>
+            <links>
+               <link type="TObjAssociacao" id="114" idSource="112" idTarget="110" qtyBreaks="2" xText="444" yText="317" removed="false" cardOrigin="1..1" cardDestination="1..1" xCardOrigin="379" yCardOrigin="329" xCardDestination="509" yCardDestination="329">
+                  <name>gerado</name>
+                  <breaks>
+                     <break x="314" y="329"/>
+                     <break x="574" y="329"/>
+                  </breaks>
+               </link>
+               <link type="TObjAssociacao" id="115" idSource="112" idTarget="106" qtyBreaks="4" xText="100" yText="206" removed="false" cardOrigin="1..1" cardDestination="1..*" xCardOrigin="115" yCardOrigin="329" xCardDestination="124" yCardDestination="83">
+                  <name>consultaDados</name>
+                  <breaks>
+                     <break x="126" y="326"/>
+                     <break x="96" y="326"/>
+                     <break x="96" y="99"/>
+                     <break x="139" y="99"/>
+                  </breaks>
+               </link>
+               <link type="TObjAssociacao" id="116" idSource="106" idTarget="112" qtyBreaks="2" xText="220" yText="223" removed="false" cardOrigin="1..*" cardDestination="1..1" xCardOrigin="220" yCardOrigin="191" xCardDestination="220" yCardDestination="255">
+                  <name>compra</name>
+                  <breaks>
+                     <break x="220" y="160"/>
+                     <break x="220" y="286"/>
+                  </breaks>
+               </link>
+               <link type="TObjAssociacao" id="117" idSource="110" idTarget="108" qtyBreaks="2" xText="642" yText="228" removed="false" cardOrigin="*" cardDestination="1..*" xCardOrigin="642" yCardOrigin="264" xCardDestination="642" yCardDestination="191">
+                  <name>contem</name>
+                  <breaks>
+                     <break x="642" y="299"/>
+                     <break x="642" y="156"/>
+                  </breaks>
+               </link>
+            </links>
+         </diagram>
+      </diagrams>
+   </classes.content>
+</classes>
