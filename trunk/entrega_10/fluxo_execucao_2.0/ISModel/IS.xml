@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>14:04</time>
+      <time>21:16</time>
    </is.head>
    <is.content>
       <name>
@@ -67,7 +67,7 @@
          <artifact class="TObjClasse" idInternal="111" qty="1" assocObj="-1" qtyAssoc="0">
             <name>Livro</name>
          </artifact>
-         <artifact class="TObjDesvioMerge" idInternal="120" qty="8" assocObj="-1" qtyAssoc="0">
+         <artifact class="TObjDesvioMerge" idInternal="120" qty="10" assocObj="-1" qtyAssoc="0">
             <name>DESVIO</name>
          </artifact>
          <artifact class="TObjDesvioMerge" idInternal="121" qty="1" assocObj="-1" qtyAssoc="0">
@@ -76,12 +76,12 @@
       </artifacts>
       <diagrams>
          <usecases>
-            <diagram id="94" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
+            <diagram id="94">
                <name>Postagem de pedido de compra</name>
             </diagram>
          </usecases>
          <classes>
-            <diagram id="104" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
+            <diagram id="104">
                <name>Postagem de pedido de compra</name>
             </diagram>
          </classes>
