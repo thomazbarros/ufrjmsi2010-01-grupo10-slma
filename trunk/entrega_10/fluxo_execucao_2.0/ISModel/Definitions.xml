@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>22:04</time>
+      <time>23:03</time>
    </definitions.head>
    <definitions.content>
       <activities>
@@ -21,8 +21,7 @@ end;</description>
             <resources/>
          </activity>
          <activity idElement="6" minimo="0" provavel="0" maximo="0">
-            <description>name = criaCliente
-procedure criarCliente(process: Process)
+            <description>procedure criarCliente(process: Process)
 var livreiro: Livreiro
 begin
  livreiro := Create(Livreiro);
@@ -50,8 +49,7 @@ end;</description>
             <resources/>
          </activity>
          <activity idElement="10" minimo="0" provavel="0" maximo="0">
-            <description>name = preenchePedido
-procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
+            <description>procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
 {
  [process].pedido := [pedidoPreenchido]
 }</description>
@@ -62,7 +60,8 @@ procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
             <resources/>
          </activity>
          <activity idElement="86" minimo="0" provavel="0" maximo="0">
-            <description>name = operacaoAbortada</description>
+            <description>
+            </description>
             <precondition>
             </precondition>
             <postcondition>
@@ -70,7 +69,8 @@ procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
             <resources/>
          </activity>
          <activity idElement="12" minimo="0" provavel="0" maximo="0">
-            <description>name = verificaListaNegra</description>
+            <description>
+            </description>
             <precondition>
             </precondition>
             <postcondition>
@@ -83,7 +83,7 @@ procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
          <object idElement="14">
             <description>name = d1
 [m1] [process].existencia = True
-[criaCliente] [process].existencia = False</description>
+[Cria Cliente] [process].existencia = False</description>
             <activities>
                <activity id="6">
                   <probabilities>
@@ -100,7 +100,7 @@ procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
          <object idElement="16">
             <description>name = m1</description>
             <activities>
-               <activity id="8">
+               <activity id="124">
                   <probabilities>
                      <probability>100</probability>
                   </probabilities>
@@ -109,8 +109,8 @@ procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
          </object>
          <object idElement="31">
             <description>name = d2
-[operacaoAbortada] process.quantidade &gt;= process.livroPronto.quantidade
-[preenchePedido] process.quantidade &lt;  process.livroPronto.quantidade</description>
+[Operação Abortada] process.quantidade &gt;= process.livroPronto.quantidade
+[Preenche Pedido] process.quantidade &lt;  process.livroPronto.quantidade</description>
             <activities>
                <activity id="86">
                   <probabilities>
@@ -126,8 +126,8 @@ procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
          </object>
          <object idElement="43">
             <description>name = d3
-[verificaListaNegra] process.livreiro.debito &lt;= 10000 
-[operacaoAbortada] process.livreiro.debito &gt; 10000</description>
+[Verifica Lista Negra] process.livreiro.debito &lt;= 10000 
+[Operação Abortada] process.livreiro.debito &gt; 10000</description>
             <activities>
                <activity id="12">
                   <probabilities>
