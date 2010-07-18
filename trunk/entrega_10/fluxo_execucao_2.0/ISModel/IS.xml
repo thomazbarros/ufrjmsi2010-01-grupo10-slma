@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>21:16</time>
+      <time>22:04</time>
    </is.head>
    <is.content>
       <name>
@@ -17,11 +17,8 @@
       <qtySequences>0</qtySequences>
       <qtyStates>0</qtyStates>
       <qtyProcesses>1</qtyProcesses>
-      <qtyElements>122</qtyElements>
+      <qtyElements>128</qtyElements>
       <artifacts>
-         <artifact class="TObjAtividade" idInternal="4" qty="1" assocObj="-1" qtyAssoc="0">
-            <name>Consulta Dados</name>
-         </artifact>
          <artifact class="TObjAtividade" idInternal="6" qty="1" assocObj="-1" qtyAssoc="0">
             <name>Cria Cliente</name>
          </artifact>
@@ -67,11 +64,17 @@
          <artifact class="TObjClasse" idInternal="111" qty="1" assocObj="-1" qtyAssoc="0">
             <name>Livro</name>
          </artifact>
-         <artifact class="TObjDesvioMerge" idInternal="120" qty="10" assocObj="-1" qtyAssoc="0">
+         <artifact class="TObjDesvioMerge" idInternal="120" qty="23" assocObj="-1" qtyAssoc="0">
             <name>DESVIO</name>
          </artifact>
-         <artifact class="TObjDesvioMerge" idInternal="121" qty="1" assocObj="-1" qtyAssoc="0">
+         <artifact class="TObjDesvioMerge" idInternal="121" qty="2" assocObj="-1" qtyAssoc="0">
             <name>MERGE</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="123" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Verifica Existência Cliente</name>
+         </artifact>
+         <artifact class="TObjAtividade" idInternal="124" qty="1" assocObj="-1" qtyAssoc="0">
+            <name>Consuta Dados</name>
          </artifact>
       </artifacts>
       <diagrams>
@@ -81,7 +84,7 @@
             </diagram>
          </usecases>
          <classes>
-            <diagram id="104">
+            <diagram id="104" showGrid="True" gridAlign="False" gridX="50" gridY="50" maxX="1936" maxY="1936">
                <name>Postagem de pedido de compra</name>
             </diagram>
          </classes>
