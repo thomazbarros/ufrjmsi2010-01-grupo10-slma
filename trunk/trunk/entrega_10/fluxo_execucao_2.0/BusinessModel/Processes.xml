@@ -5,7 +5,7 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>21:16</time>
+      <time>22:04</time>
    </processes.head>
    <processes.content>
       <diagrams>
@@ -276,19 +276,19 @@
                   <name>
                   </name>
                </element>
-               <element type="TObjAtividade" idExternal="4" idInternal="5" xBeginning="39" yBeginning="71" xEnd="139" yEnd="121" removed="false" objectType="0">
-                  <name>Consulta Dados</name>
+               <element type="TObjAtividade" idExternal="123" idInternal="5" xBeginning="28" yBeginning="69" xEnd="152" yEnd="119" removed="false" objectType="0">
+                  <name>Verifica Existência Cliente</name>
                </element>
                <element type="TObjAtividade" idExternal="6" idInternal="7" xBeginning="267" yBeginning="165" xEnd="367" yEnd="215" removed="false" objectType="0">
                   <name>Cria Cliente</name>
                </element>
-               <element type="TObjAtividade" idExternal="8" idInternal="9" xBeginning="38" yBeginning="366" xEnd="138" yEnd="416" removed="false" objectType="0">
+               <element type="TObjAtividade" idExternal="8" idInternal="9" xBeginning="37" yBeginning="443" xEnd="137" yEnd="493" removed="false" objectType="0">
                   <name>Seleciona Título</name>
                </element>
-               <element type="TObjAtividade" idExternal="10" idInternal="11" xBeginning="470" yBeginning="459" xEnd="570" yEnd="509" removed="false" objectType="">
+               <element type="TObjAtividade" idExternal="10" idInternal="11" xBeginning="469" yBeginning="459" xEnd="569" yEnd="509" removed="false" objectType="0">
                   <name>Preenche Pedido</name>
                </element>
-               <element type="TObjAtividade" idExternal="12" idInternal="13" xBeginning="868" yBeginning="368" xEnd="968" yEnd="418" removed="false" objectType="">
+               <element type="TObjAtividade" idExternal="12" idInternal="13" xBeginning="868" yBeginning="368" xEnd="968" yEnd="418" removed="false" objectType="0">
                   <name>Verifica Lista Negra</name>
                </element>
                <element type="TObjDesvioMerge" idExternal="14" idInternal="15" xBeginning="64" yBeginning="164" xEnd="114" yEnd="214" removed="false" objectType="0">
@@ -297,10 +297,10 @@
                <element type="TObjDesvioMerge" idExternal="16" idInternal="17" xBeginning="63" yBeginning="269" xEnd="113" yEnd="319" removed="false" objectType="0">
                   <name>MERGE</name>
                </element>
-               <element type="TObjInsumoProduto" idExternal="23" idInternal="24" xBeginning="266" yBeginning="71" xEnd="366" yEnd="121" removed="false" objectType="Insumo/Produto" resourceId="">
+               <element type="TObjInsumoProduto" idExternal="23" idInternal="24" xBeginning="266" yBeginning="70" xEnd="366" yEnd="120" removed="false" objectType="Insumo/Produto" resourceId="">
                   <name>Livreiro</name>
                </element>
-               <element type="TObjInsumoProduto" idExternal="27" idInternal="28" xBeginning="37" yBeginning="499" xEnd="137" yEnd="549" removed="false" objectType="Insumo/Produto" resourceId="">
+               <element type="TObjInsumoProduto" idExternal="27" idInternal="28" xBeginning="37" yBeginning="530" xEnd="137" yEnd="580" removed="false" objectType="Insumo/Produto" resourceId="">
                   <name>Livro</name>
                </element>
                <element type="TObjDesvioMerge" idExternal="31" idInternal="32" xBeginning="219" yBeginning="367" xEnd="269" yEnd="417" removed="false" objectType="0">
@@ -337,7 +337,7 @@
                   <name>
                   </name>
                </element>
-               <element type="TObjAtividade" idExternal="86" idInternal="72" xBeginning="513" yBeginning="244" xEnd="613" yEnd="294" removed="false" objectType="">
+               <element type="TObjAtividade" idExternal="86" idInternal="72" xBeginning="513" yBeginning="244" xEnd="613" yEnd="294" removed="false" objectType="0">
                   <name>Operação Abortada</name>
                </element>
                <element type="TObjEstadoFinal" idExternal="82" idInternal="83" xBeginning="553" yBeginning="155" xEnd="573" yEnd="175" removed="false">
@@ -353,21 +353,24 @@
                <element type="TObjComentario" idExternal="118" idInternal="119" xBeginning="694" yBeginning="355" xEnd="870" yEnd="375" removed="false">
                   <name>Débito menor que 10000</name>
                </element>
+               <element type="TObjAtividade" idExternal="124" idInternal="125" xBeginning="38" yBeginning="351" xEnd="138" yEnd="401" removed="false" objectType="0">
+                  <name>Consuta Dados</name>
+               </element>
             </elements>
             <links>
                <link type="TObjFluxoCheio" id="18" idSource="3" idTarget="5" qtyBreaks="2" xText="87" yText="50" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="89" y="28"/>
-                     <break x="89" y="71"/>
+                     <break x="90" y="28"/>
+                     <break x="90" y="69"/>
                   </breaks>
                </link>
                <link type="TObjFluxoCheio" id="19" idSource="5" idTarget="15" qtyBreaks="2" xText="91" yText="142" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="89" y="121"/>
+                     <break x="89" y="119"/>
                      <break x="89" y="164"/>
                   </breaks>
                </link>
@@ -401,40 +404,34 @@
                   </name>
                   <breaks>
                      <break x="316" y="165"/>
-                     <break x="316" y="121"/>
-                  </breaks>
-               </link>
-               <link type="TObjFluxoCheio" id="26" idSource="17" idTarget="9" qtyBreaks="2" xText="97" yText="343" removed="false">
-                  <name>
-                  </name>
-                  <breaks>
-                     <break x="88" y="319"/>
-                     <break x="88" y="366"/>
+                     <break x="316" y="120"/>
                   </breaks>
                </link>
                <link type="TObjDependencia" id="29" idSource="5" idTarget="28" qtyBreaks="4" xText="91" yText="310" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="39" y="94"/>
+                     <break x="28" y="94"/>
                      <break x="13" y="94"/>
-                     <break x="16" y="524"/>
-                     <break x="37" y="524"/>
+                     <break x="16" y="554"/>
+                     <break x="37" y="554"/>
                   </breaks>
                </link>
                <link type="TObjDependencia" id="30" idSource="9" idTarget="28" qtyBreaks="2" xText="86" yText="457" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="87" y="416"/>
-                     <break x="87" y="499"/>
+                     <break x="87" y="493"/>
+                     <break x="87" y="530"/>
                   </breaks>
                </link>
-               <link type="TObjFluxoCheio" id="33" idSource="9" idTarget="32" qtyBreaks="2" xText="174" yText="391" removed="false">
+               <link type="TObjFluxoCheio" id="33" idSource="9" idTarget="32" qtyBreaks="4" xText="174" yText="391" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="138" y="391"/>
+                     <break x="137" y="468"/>
+                     <break x="174" y="468"/>
+                     <break x="174" y="391"/>
                      <break x="219" y="391"/>
                   </breaks>
                </link>
@@ -501,14 +498,14 @@
                   <breaks>
                      <break x="243" y="417"/>
                      <break x="243" y="483"/>
-                     <break x="470" y="483"/>
+                     <break x="469" y="483"/>
                   </breaks>
                </link>
                <link type="TObjFluxoCheio" id="88" idSource="11" idTarget="44" qtyBreaks="3" xText="593" yText="432" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="570" y="484"/>
+                     <break x="569" y="484"/>
                      <break x="680" y="484"/>
                      <break x="680" y="419"/>
                   </breaks>
@@ -517,16 +514,32 @@
                   <name>
                   </name>
                   <breaks>
-                     <break x="520" y="459"/>
+                     <break x="519" y="459"/>
                      <break x="520" y="409"/>
                   </breaks>
                </link>
-               <link type="TObjDependencia" id="122" idSource="24" idTarget="5" qtyBreaks="2" xText="202" yText="84" removed="false">
+               <link type="TObjFluxoCheio" id="126" idSource="17" idTarget="125" qtyBreaks="2" xText="88" yText="335" removed="false">
                   <name>
                   </name>
                   <breaks>
-                     <break x="266" y="96"/>
-                     <break x="139" y="96"/>
+                     <break x="88" y="319"/>
+                     <break x="88" y="351"/>
+                  </breaks>
+               </link>
+               <link type="TObjFluxoCheio" id="127" idSource="125" idTarget="9" qtyBreaks="2" xText="87" yText="422" removed="false">
+                  <name>
+                  </name>
+                  <breaks>
+                     <break x="87" y="401"/>
+                     <break x="87" y="443"/>
+                  </breaks>
+               </link>
+               <link type="TObjDependencia" id="128" idSource="5" idTarget="24" qtyBreaks="2" xText="209" yText="94" removed="false">
+                  <name>
+                  </name>
+                  <breaks>
+                     <break x="152" y="94"/>
+                     <break x="266" y="94"/>
                   </breaks>
                </link>
             </links>

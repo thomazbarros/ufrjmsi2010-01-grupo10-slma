@@ -5,12 +5,15 @@
       <tool>RAPDIS</tool>
       <version>1.0</version>
       <date>17/07/2010</date>
-      <time>21:16</time>
+      <time>22:04</time>
    </definitions.head>
    <definitions.content>
       <activities>
-         <activity idElement="4" minimo="0" provavel="0" maximo="0">
-            <description>post:  Livreiro.allInstances-&gt;select(id  = id_cliente)-&gt;size() &gt; 1</description>
+         <activity idElement="123" minimo="0" provavel="0" maximo="0">
+            <description>procedure verificaExistenciaCliente(process: Process)
+begin
+ [process].existencia := Livreiro.allInstances-&gt;select(id  = id_cliente)-&gt;size() &gt; 1
+end;</description>
             <precondition>
             </precondition>
             <postcondition>
@@ -18,7 +21,8 @@
             <resources/>
          </activity>
          <activity idElement="6" minimo="0" provavel="0" maximo="0">
-            <description>procedure criarCliente(process: Process)
+            <description>name = criaCliente
+procedure criarCliente(process: Process)
 var livreiro: Livreiro
 begin
  livreiro := Create(Livreiro);
@@ -30,12 +34,56 @@ end;</description>
             </postcondition>
             <resources/>
          </activity>
+         <activity idElement="8" minimo="0" provavel="0" maximo="0">
+            <description>procedure selecionaTitulo(procedure: Procedure, livroPedido: Livro, quantidadePedida: Integer )
+var livroPronto : LivroPronto
+begin
+ [process].livro := [livroPedido];
+ livroPronto := Livro.allInstances-&gt;select(nome = [livroPedido].nome).livroPronto;
+ [process].livroPronto := livroPronto; 
+ [process].quantidade := quantidadePedida;
+end;</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="10" minimo="0" provavel="0" maximo="0">
+            <description>name = preenchePedido
+procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
+{
+ [process].pedido := [pedidoPreenchido]
+}</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="86" minimo="0" provavel="0" maximo="0">
+            <description>name = operacaoAbortada</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="12" minimo="0" provavel="0" maximo="0">
+            <description>name = verificaListaNegra</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
       </activities>
       <signals/>
       <objects>
          <object idElement="14">
             <description>name = d1
-[m1] process.cliiente.isDefined()</description>
+[m1] [process].existencia = True
+[criaCliente] [process].existencia = False</description>
             <activities>
                <activity id="6">
                   <probabilities>
@@ -60,7 +108,9 @@ end;</description>
             </activities>
          </object>
          <object idElement="31">
-            <description>name = d2</description>
+            <description>name = d2
+[operacaoAbortada] process.quantidade &gt;= process.livroPronto.quantidade
+[preenchePedido] process.quantidade &lt;  process.livroPronto.quantidade</description>
             <activities>
                <activity id="86">
                   <probabilities>
@@ -75,7 +125,9 @@ end;</description>
             </activities>
          </object>
          <object idElement="43">
-            <description>name = d3</description>
+            <description>name = d3
+[verificaListaNegra] process.livreiro.debito &lt;= 10000 
+[operacaoAbortada] process.livreiro.debito &gt; 10000</description>
             <activities>
                <activity id="12">
                   <probabilities>
@@ -90,7 +142,8 @@ end;</description>
             </activities>
          </object>
          <object idElement="45">
-            <description>name = d4</description>
+            <description>name = d4
+random = true</description>
             <activities>
                <activity id="58">
                   <probabilities>
@@ -119,6 +172,9 @@ end;</description>
                </attribute>
                <attribute visibility="0" type="BOOLEAN">
                   <name>lista</name>
+               </attribute>
+               <attribute visibility="0" type="REAL">
+                  <name>debito</name>
                </attribute>
             </atributes>
             <methods>
