@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions>
+   <definitions.head>
+      <project>Project Name</project>
+      <tool>RAPDIS</tool>
+      <version>1.0</version>
+      <date>17/07/2010</date>
+      <time>23:40</time>
+   </definitions.head>
+   <definitions.content>
+      <activities>
+         <activity idElement="132" minimo="0" provavel="0" maximo="0">
+            <description>procedure verificaExistenciaCliente(process: Process)
+begin
+ [process].existencia := Livreiro.allInstances-&gt;select(id  = id_cliente)-&gt;size() &gt; 1
+end;</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="6" minimo="0" provavel="0" maximo="0">
+            <description>procedure criarCliente(process: Process)
+var livreiro: Livreiro
+begin
+ livreiro := Create(Livreiro);
+ [process].livreiro := livreiro;
+end;</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="134" minimo="0" provavel="0" maximo="0">
+            <description>procedure selecionaTitulo(process: Process, livroPedido: Livro, quantidadePedida: Integer )
+var livroPronto : LivroPronto
+begin
+ [process].livro := [livroPedido];
+ livroPronto := Livro.allInstances-&gt;select(nome = [livroPedido].nome).livroPronto;
+ [process].livroPronto := livroPronto; 
+ [process].quantidade := quantidadePedida;
+end;</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="10" minimo="0" provavel="0" maximo="0">
+            <description>procedure preenchePedido(process: Process,pedidoPreenchido: Pedido)
+{
+ [process].pedido := [pedidoPreenchido]
+}</description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="133" minimo="0" provavel="0" maximo="0">
+            <description>
+            </description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+         <activity idElement="12" minimo="0" provavel="0" maximo="0">
+            <description>
+            </description>
+            <precondition>
+            </precondition>
+            <postcondition>
+            </postcondition>
+            <resources/>
+         </activity>
+      </activities>
+      <signals/>
+      <objects>
+         <object idElement="14">
+            <description>name = d1
+[m1] [process].existencia = True
+[Cria Cliente] [process].existencia = False</description>
+            <activities>
+               <activity id="6">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+               <activity id="16">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+            </activities>
+         </object>
+         <object idElement="16">
+            <description>name = m1</description>
+            <activities>
+               <activity id="124">
+                  <probabilities>
+                     <probability>100</probability>
+                  </probabilities>
+               </activity>
+            </activities>
+         </object>
+         <object idElement="31">
+            <description>name = d2
+
+[Operacao Abortada] process.quantidade &gt;= process.livroPronto.quantidade
+[Preenche Pedido] process.quantidade &lt; process.livroPronto.quantidade</description>
+            <activities>
+               <activity id="133">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+               <activity id="10">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+            </activities>
+         </object>
+         <object idElement="43">
+            <description>name = d3
+[Verifica Lista Negra] process.livreiro.debito &lt;= 10000 
+[Operacao Abortada] process.livreiro.debito &gt; 10000</description>
+            <activities>
+               <activity id="12">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+               <activity id="133">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+            </activities>
+         </object>
+         <object idElement="45">
+            <description>name = d4
+random = true</description>
+            <activities>
+               <activity id="58">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+               <activity id="133">
+                  <probabilities>
+                     <probability>50</probability>
+                  </probabilities>
+               </activity>
+            </activities>
+         </object>
+      </objects>
+      <actors/>
+      <usecases/>
+      <classes>
+         <class idElement="105">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="INTEGER">
+                  <name>id</name>
+               </attribute>
+               <attribute visibility="0" type="BOOLEAN">
+                  <name>lista</name>
+               </attribute>
+               <attribute visibility="0" type="REAL">
+                  <name>debito</name>
+               </attribute>
+            </atributes>
+            <methods>
+               <method visibility="0">
+                  <name>geraRelatorioPedidos</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>geraRelatorioFaturas</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>geraRelatorioPagamentos</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+               <method visibility="0">
+                  <name>geraRelatorioDevolucoes</name>
+                  <description>
+                  </description>
+                  <parameters/>
+                  <testcases/>
+               </method>
+            </methods>
+         </class>
+         <class idElement="107">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="INTEGER">
+                  <name>quantidade</name>
+               </attribute>
+               <attribute visibility="0" type="REAL">
+                  <name>valor</name>
+               </attribute>
+               <attribute visibility="0" type="STRING">
+                  <name>estado</name>
+               </attribute>
+               <attribute visibility="0" type="STRING">
+                  <name>formaEnvio</name>
+               </attribute>
+               <attribute visibility="0" type="INTEGER">
+                  <name>id</name>
+               </attribute>
+            </atributes>
+            <methods/>
+         </class>
+         <class idElement="109">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="INTEGER">
+                  <name>quantidade</name>
+               </attribute>
+            </atributes>
+            <methods/>
+         </class>
+         <class idElement="111">
+            <heranca>TObject</heranca>
+            <classtype>0</classtype>
+            <description>
+            </description>
+            <atributes>
+               <attribute visibility="0" type="STRING">
+                  <name>titulo</name>
+               </attribute>
+               <attribute visibility="0" type="STRING">
+                  <name>prazoDisponibilidade</name>
+               </attribute>
+               <attribute visibility="0" type="REAL">
+                  <name>custo</name>
+               </attribute>
+            </atributes>
+            <methods/>
+         </class>
+      </classes>
+      <associations>
+         <association idLink="113">
+            <role>contem</role>
+            <roleClass1>livroPronto</roleClass1>
+            <cardinalityClass1>*</cardinalityClass1>
+            <roleClass2>pedido</roleClass2>
+            <cardinalityClass2>1..*</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="114">
+            <role>gerado</role>
+            <roleClass1>livro</roleClass1>
+            <cardinalityClass1>1..1</cardinalityClass1>
+            <roleClass2>livroPronto</roleClass2>
+            <cardinalityClass2>1..1</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="115">
+            <role>consultaDados</role>
+            <roleClass1>livroConsulta</roleClass1>
+            <cardinalityClass1>1..1</cardinalityClass1>
+            <roleClass2>livreiroConsulta</roleClass2>
+            <cardinalityClass2>1..*</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="116">
+            <role>compra</role>
+            <roleClass1>livreiroCompra</roleClass1>
+            <cardinalityClass1>1..*</cardinalityClass1>
+            <roleClass2>livroCompra</roleClass2>
+            <cardinalityClass2>1..1</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+         <association idLink="117">
+            <role>contem</role>
+            <roleClass1>livroPronto</roleClass1>
+            <cardinalityClass1>*</cardinalityClass1>
+            <roleClass2>pedido</roleClass2>
+            <cardinalityClass2>1..*</cardinalityClass2>
+            <notes>
+            </notes>
+         </association>
+      </associations>
+      <states/>
+      <transitions/>
+      <swimlanes/>
+   </definitions.content>
+</definitions>
